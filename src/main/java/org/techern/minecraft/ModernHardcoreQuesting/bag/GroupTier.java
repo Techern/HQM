@@ -38,7 +38,7 @@ public class GroupTier {
         try {
             SaveHandler.saveBags(SaveHandler.getLocalFile("bags"));
         } catch (IOException e) {
-            FMLLog.log("HQM", Level.INFO, "Failed to save bags");
+            FMLLog.log("MHQ", Level.INFO, "Failed to save bags");
         }
     }
 
@@ -46,7 +46,7 @@ public class GroupTier {
         try {
             SaveHandler.saveBags(SaveHandler.getDefaultFile("bags"));
         } catch (IOException e) {
-            FMLLog.log("HQM", Level.INFO, "Failed to save bags");
+            FMLLog.log("MHQ", Level.INFO, "Failed to save bags");
         }
     }
 
@@ -56,7 +56,7 @@ public class GroupTier {
             GroupTier.getTiers().clear();
             GroupTier.getTiers().addAll(SaveHandler.loadBags(SaveHandler.getFile("bags", remote)));
         } catch (IOException e) {
-            FMLLog.log("HQM", Level.INFO, "Failed to save bags");
+            FMLLog.log("MHQ", Level.INFO, "Failed to save bags");
         }
     }
 
@@ -111,7 +111,7 @@ public class GroupTier {
     }
 
     public String getName() {
-        return name == null || name.equals("") ? Translator.translate("hqm.bag.unknown") : name;
+        return name == null || name.equals("") ? Translator.translate("modernhardcorequesting.bag.unknown") : name;
     }
 
     public void setName(String name) {

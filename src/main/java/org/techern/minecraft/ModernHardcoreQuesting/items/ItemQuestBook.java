@@ -55,7 +55,7 @@ public class ItemQuestBook extends Item {
         if (!world.isRemote && player instanceof EntityPlayerMP) {
             ItemStack stack = player.getHeldItem(hand);
             if (!QuestingData.isQuestActive()) {
-                player.sendMessage(Translator.translateToIChatComponent("hqm.message.noQuestYet"));
+                player.sendMessage(Translator.translateToIChatComponent("modernhardcorequesting.message.noQuestYet"));
             } else {
                 if (stack.getItemDamage() == 1) {
                     NBTTagCompound compound = stack.getTagCompound();
@@ -74,9 +74,9 @@ public class ItemQuestBook extends Item {
                                 QuestingData.getQuestingData(subject).getTeam().getEntry(subject.getUniqueID().toString()).setBookOpen(true);
                                 NetworkManager.sendToPlayer(GuiType.BOOK.build(Boolean.TRUE.toString()), (EntityPlayerMP) subject);
                             }
-                            //player.addChatComponentMessage(Translator.translateToIChatComponent("hqm.message.alreadyEditing"));
+                            //player.addChatComponentMessage(Translator.translateToIChatComponent("modernhardcorequesting.message.alreadyEditing"));
                         } else {
-                            player.sendMessage(Translator.translateToIChatComponent("hqm.message.bookNoPermission"));
+                            player.sendMessage(Translator.translateToIChatComponent("modernhardcorequesting.message.bookNoPermission"));
                         }
                     }
                 } else {
@@ -102,9 +102,9 @@ public class ItemQuestBook extends Item {
             NBTTagCompound compound = stack.getTagCompound();
             if (compound != null && compound.hasKey(NBT_PLAYER)) {
                 EntityPlayer useAsPlayer = QuestingData.getPlayer(compound.getString(NBT_PLAYER));
-                tooltip.add(Translator.translate("item.hqm:quest_book_1.useAs", useAsPlayer == null ? "INVALID" : useAsPlayer.getDisplayNameString()));
+                tooltip.add(Translator.translate("item.modernhardcorequesting:quest_book_1.useAs", useAsPlayer == null ? "INVALID" : useAsPlayer.getDisplayNameString()));
             } else
-                tooltip.add(GuiColor.RED + Translator.translate("item.hqm:quest_book_1.invalid"));
+                tooltip.add(GuiColor.RED + Translator.translate("item.modernhardcorequesting:quest_book_1.invalid"));
         }
     }
 

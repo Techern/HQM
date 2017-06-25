@@ -119,7 +119,7 @@ public class Group {
                 GlStateManager.disableBlend();
             }
 
-            gui.drawString(Translator.translate("hqm.questBook.items", group.getItems().size()),
+            gui.drawString(Translator.translate("modernhardcorequesting.questBook.items", group.getItems().size()),
                     GuiQuestBook.GROUPS_X + GuiQuestBook.GROUPS_SECOND_LINE_X,
                     yPos + GuiQuestBook.GROUPS_SECOND_LINE_Y,
                     0.7F, 0x404040);
@@ -167,7 +167,7 @@ public class Group {
     }
 
     public String getName() {
-        return hasName() ? name : Translator.translate("hqm.bag.group", tier.getName());
+        return hasName() ? name : Translator.translate("modernhardcorequesting.bag.group", tier.getName());
     }
 
     public void setName(String name) {
@@ -295,8 +295,8 @@ public class Group {
             }
         }
 
-        gui.drawString(Translator.translate("hqm.questBook.maxRetrieval"), 180, 20, 0x404040);
-        gui.drawString(Translator.translate("hqm.questBook.noRestriction"), 180, 48, 0.7F, 0x404040);
+        gui.drawString(Translator.translate("modernhardcorequesting.questBook.maxRetrieval"), 180, 20, 0x404040);
+        gui.drawString(Translator.translate("modernhardcorequesting.questBook.noRestriction"), 180, 48, 0.7F, 0x404040);
     }
 
     @SideOnly(Side.CLIENT)

@@ -119,7 +119,7 @@ public class Quest {
     };
 
     {
-        buttons.add(new LargeButton("hqm.quest.claim", 100, 190) {
+        buttons.add(new LargeButton("modernhardcorequesting.quest.claim", 100, 190) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return canPlayerClaimReward(player);
@@ -136,7 +136,7 @@ public class Quest {
             }
         });
 
-        buttons.add(new LargeButton("hqm.quest.manualSubmit", 185, 200) {
+        buttons.add(new LargeButton("modernhardcorequesting.quest.manualSubmit", 185, 200) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return ((QuestTaskItemsConsume) selectedTask).allowManual();
@@ -153,7 +153,7 @@ public class Quest {
             }
         });
 
-        buttons.add(new LargeButton("hqm.quest.manualDetect", 185, 200) {
+        buttons.add(new LargeButton("modernhardcorequesting.quest.manualDetect", 185, 200) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;
@@ -170,7 +170,7 @@ public class Quest {
             }
         });
 
-        buttons.add(new LargeButton("hqm.quest.requirement", 185, 200) {
+        buttons.add(new LargeButton("modernhardcorequesting.quest.requirement", 185, 200) {
             @Override
             @SideOnly(Side.CLIENT)
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
@@ -190,7 +190,7 @@ public class Quest {
             }
         });
 
-        buttons.add(new LargeButton("hqm.quest.requirement", 250, 95) {
+        buttons.add(new LargeButton("modernhardcorequesting.quest.requirement", 250, 95) {
             @Override
             @SideOnly(Side.CLIENT)
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
@@ -211,7 +211,7 @@ public class Quest {
         });
 
 
-        buttons.add(new LargeButton("hqm.quest.selectTask", 250, 200) {
+        buttons.add(new LargeButton("modernhardcorequesting.quest.selectTask", 250, 200) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return QuestingData.getQuestingData(player).selectedQuest.equals(getId()) && QuestingData.getQuestingData(player).selectedTask == selectedTask.getId();
@@ -879,14 +879,14 @@ public class Quest {
             selectedReward = -1;
         }
         if (!rewards.isEmpty() || isEditing) {
-            gui.drawString(Translator.translate("hqm.quest.rewards"), START_X, REWARD_STR_Y, 0x404040);
+            gui.drawString(Translator.translate("modernhardcorequesting.quest.rewards"), START_X, REWARD_STR_Y, 0x404040);
             drawRewards(gui, rewards.toArray(), REWARD_Y, -1, mX, mY, MAX_SELECT_REWARD_SLOTS);
             if (!rewardChoices.isEmpty() || isEditing) {
-                gui.drawString(Translator.translate("hqm.quest.pickOne"), START_X, REWARD_STR_Y + REWARD_Y_OFFSET, 0x404040);
+                gui.drawString(Translator.translate("modernhardcorequesting.quest.pickOne"), START_X, REWARD_STR_Y + REWARD_Y_OFFSET, 0x404040);
                 drawRewards(gui, rewardChoices.toArray(), REWARD_Y + REWARD_Y_OFFSET, selectedReward, mX, mY, MAX_REWARD_SLOTS);
             }
         } else if (!rewardChoices.isEmpty()) {
-            gui.drawString(Translator.translate("hqm.quest.pickOneReward"), START_X, REWARD_STR_Y, 0x404040);
+            gui.drawString(Translator.translate("modernhardcorequesting.quest.pickOneReward"), START_X, REWARD_STR_Y, 0x404040);
             drawRewards(gui, rewardChoices.toArray(), REWARD_Y, selectedReward, mX, mY, MAX_REWARD_SLOTS);
         }
 
@@ -941,9 +941,9 @@ public class Quest {
         if (selectedTask != null) {
             if (isEditing && gui.getCurrentMode() == EditMode.CHANGE_TASK) {
                 if (selectedTask instanceof QuestTaskItems) {
-                    gui.drawString(gui.getLinesFromText(Translator.translate("hqm.quest.itemTaskChangeTo"), 0.7F, 130), 180, 20, 0.7F, 0x404040);
+                    gui.drawString(gui.getLinesFromText(Translator.translate("modernhardcorequesting.quest.itemTaskChangeTo"), 0.7F, 130), 180, 20, 0.7F, 0x404040);
                 } else {
-                    gui.drawString(gui.getLinesFromText(Translator.translate("hqm.quest.itemTaskTypeOnly"), 0.7F, 130), 180, 20, 0.7F, 0x404040);
+                    gui.drawString(gui.getLinesFromText(Translator.translate("modernhardcorequesting.quest.itemTaskTypeOnly"), 0.7F, 130), 180, 20, 0.7F, 0x404040);
                 }
             } else {
                 List<String> description = selectedTask.getCachedLongDescription(gui);
@@ -953,9 +953,9 @@ public class Quest {
                 selectedTask.draw(gui, player, mX, mY);
             }
         } else if (isEditing && gui.getCurrentMode() == EditMode.TASK) {
-            gui.drawString(gui.getLinesFromText(Translator.translate("hqm.quest.createTasks"), 0.7F, 130), 180, 20, 0.7F, 0x404040);
+            gui.drawString(gui.getLinesFromText(Translator.translate("modernhardcorequesting.quest.createTasks"), 0.7F, 130), 180, 20, 0.7F, 0x404040);
         } else if (isEditing && gui.getCurrentMode() == EditMode.CHANGE_TASK) {
-            gui.drawString(gui.getLinesFromText(Translator.translate("hqm.quest.itemTaskTypeChange"), 0.7F, 130), 180, 20, 0.7F, 0x404040);
+            gui.drawString(gui.getLinesFromText(Translator.translate("modernhardcorequesting.quest.itemTaskTypeChange"), 0.7F, 130), 180, 20, 0.7F, 0x404040);
         }
 
         if (!rewards.isEmpty() || isEditing) {
@@ -979,7 +979,7 @@ public class Quest {
 
             }
 
-            List<String> commentLines = gui.getLinesFromText(Translator.translate("hqm.quest.partyRepReward" + (claimed ? "Claimed" : "")), 1, 200);
+            List<String> commentLines = gui.getLinesFromText(Translator.translate("modernhardcorequesting.quest.partyRepReward" + (claimed ? "Claimed" : "")), 1, 200);
             if (commentLines != null) {
                 str.add("");
                 for (String commentLine : commentLines) {
@@ -1036,7 +1036,7 @@ public class Quest {
                             if (isEditing && !GuiQuestBook.isCtrlKeyDown()) {
                                 str = rewards[i].getTooltip(Minecraft.getMinecraft().player, Minecraft.getMinecraft().gameSettings.advancedItemTooltips);
                                 str.add("");
-                                str.add(GuiColor.GRAY + Translator.translate("hqm.quest.crtlNonEditor"));
+                                str.add(GuiColor.GRAY + Translator.translate("modernhardcorequesting.quest.crtlNonEditor"));
                             } else {
                                 str.add(rewards[i].getDisplayName());
                             }
@@ -1045,7 +1045,7 @@ public class Quest {
                         }
 
                         if (selected == i) {
-                            str.add(GuiColor.GREEN + Translator.translate("hqm.quest.selected"));
+                            str.add(GuiColor.GREEN + Translator.translate("modernhardcorequesting.quest.selected"));
                         }
                         gui.drawMouseOver(str, gui.getLeft() + mX, gui.getTop() + mY);
                     }
@@ -1638,11 +1638,11 @@ public class Quest {
         }
 
         public String getLangKeyDescription() {
-            return "hqm.taskType." + id + ".desc";
+            return "modernhardcorequesting.taskType." + id + ".desc";
         }
 
         public String getLangKeyName() {
-            return "hqm.taskType." + id + ".title";
+            return "modernhardcorequesting.taskType." + id + ".title";
         }
 
         public String getDescription() {

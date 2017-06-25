@@ -55,27 +55,27 @@ public class ItemHeart extends Item {
             ItemStack stack = player.getHeldItem(hand);
             if (stack.getItemDamage() == 3) {
                 if (!QuestingData.isHardcoreActive()) {
-                    player.sendMessage(new TextComponentTranslation("hqm.message.noHardcoreYet"));
+                    player.sendMessage(new TextComponentTranslation("modernhardcorequesting.message.noHardcoreYet"));
                 } else if (QuestingData.getQuestingData(player).getRawLives() < ModConfig.MAXLIVES) {
                     QuestingData.getQuestingData(player).addLives(player, 1);
-                    player.sendMessage(new TextComponentTranslation("hqm.message.addOne"));
+                    player.sendMessage(new TextComponentTranslation("modernhardcorequesting.message.addOne"));
                     int lives = QuestingData.getQuestingData(player).getLives();
-                    player.sendMessage(new TextComponentTranslation("hqm.message.haveRemaining", lives));
+                    player.sendMessage(new TextComponentTranslation("modernhardcorequesting.message.haveRemaining", lives));
                     SoundHandler.play(Sounds.LIFE, player);
                     if (!player.capabilities.isCreativeMode) {
                         stack.shrink(1);
 
                     }
                 } else {
-                    player.sendMessage(new TextComponentTranslation("hqm.message.haveMaxLives"));
+                    player.sendMessage(new TextComponentTranslation("modernhardcorequesting.message.haveMaxLives"));
                 }
             }
             if (stack.getItemDamage() == 4) {
                 if (!QuestingData.isHardcoreActive()) {
-                    player.sendMessage(new TextComponentTranslation("hqm.message.noHardcoreYet"));
+                    player.sendMessage(new TextComponentTranslation("modernhardcorequesting.message.noHardcoreYet"));
                 } else {
                     SoundHandler.play(Sounds.ROTTEN, player);
-                    player.sendMessage(new TextComponentTranslation("hqm.message.eatRottenHearth"));
+                    player.sendMessage(new TextComponentTranslation("modernhardcorequesting.message.eatRottenHearth"));
                     QuestingData.getQuestingData(player).removeLifeAndSendMessage(player);
                     DeathType.HQM.onDeath(player);
 
@@ -114,7 +114,7 @@ public class ItemHeart extends Item {
                     int newRot = tagCompound.getInteger("RotTime");
                     if (newRot <= 0) {
                         stack.setItemDamage(4);
-                        entityPlayer.sendMessage(new TextComponentTranslation("hqm.message.hearthDecay"));
+                        entityPlayer.sendMessage(new TextComponentTranslation("modernhardcorequesting.message.hearthDecay"));
                     } else {
                         tagCompound.setInteger("RotTime", newRot - 1);
                     }
@@ -129,7 +129,7 @@ public class ItemHeart extends Item {
         super.addInformation(stack, player, tooltip, extraInfo);
 
         if (stack.getItemDamage() == 3) {
-            tooltip.add(Translator.translate("item.hqm:hearts_heart.tooltip"));
+            tooltip.add(Translator.translate("item.modernhardcorequesting:hearts_heart.tooltip"));
             if (ModConfig.ROTTIMER) {
                 NBTTagCompound tagCompound = stack.getTagCompound();
                 if (tagCompound == null) {
@@ -140,12 +140,12 @@ public class ItemHeart extends Item {
                     int rot = tagCompound.getInteger("RotTime");
                     int maxRot = tagCompound.getInteger("MaxRot");
                     float percentage = (float) ((rot * 100) / maxRot);
-                    tooltip.add(Translator.translate("item.hqm:hearts_heart.freshness", percentage));
+                    tooltip.add(Translator.translate("item.modernhardcorequesting:hearts_heart.freshness", percentage));
                 }
             }
         }
         if (stack.getItemDamage() == 4) {
-            tooltip.add(Translator.translate("item.hqm:hearts_rottenheart.tooltip"));
+            tooltip.add(Translator.translate("item.modernhardcorequesting:hearts_rottenheart.tooltip"));
         }
     }
 
