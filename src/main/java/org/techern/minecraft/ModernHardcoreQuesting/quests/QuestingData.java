@@ -225,7 +225,12 @@ public class QuestingData {
         }
     }
 
+    /**
+     * Attempts to spawn a {@link org.techern.minecraft.ModernHardcoreQuesting.items.ItemQuestBook} for a {@link EntityPlayer}
+     * @param player
+     */
     public static void spawnBook(EntityPlayer player) {
+
         if (!Quest.isEditing && !player.world.isRemote && ModConfig.spawnBook && !QuestingData.getQuestingData(player).receivedBook && QuestingData.isQuestActive()) {
             QuestingData.getQuestingData(player).receivedBook = true;
             NBTTagCompound hqmTag = new NBTTagCompound();
@@ -234,6 +239,13 @@ public class QuestingData {
             hqmTag.setBoolean(PlayerTracker.RECEIVED_BOOK, true);
             player.getEntityData().setTag(PlayerTracker.HQ_TAG, hqmTag);
             ItemStack stack = new ItemStack(ModItems.book);
+
+            //Actually, as a last resort, check to see if a player already has a book
+            //Fixes books spawning every time in development environments.
+            if (player.inventory.hasItemStack(stack)) {
+                return; //Maybe send a message one day
+            }
+
             if (!player.inventory.addItemStackToInventory(stack)) {
                 spawnItemAtPlayer(player, stack);
             }
