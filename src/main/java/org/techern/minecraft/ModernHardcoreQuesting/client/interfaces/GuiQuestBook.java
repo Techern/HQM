@@ -241,7 +241,7 @@ public class GuiQuestBook extends GuiBase {
     }
 
     {
-        buttons.add(saveButton = new LargeButton("hqm.questBook.saveAll", 360, 10) {
+        buttons.add(saveButton = new LargeButton("modernhardcorequesting.questBook.saveAll", 360, 10) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;
@@ -258,7 +258,7 @@ public class GuiQuestBook extends GuiBase {
             }
         });
 
-        buttons.add(new LargeButton("hqm.questBook.open", 245, 190) {
+        buttons.add(new LargeButton("modernhardcorequesting.questBook.open", 245, 190) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;
@@ -275,7 +275,7 @@ public class GuiQuestBook extends GuiBase {
             }
         });
 
-        buttons.add(new LargeButton("hqm.questBook.createSet", 185, 50) {
+        buttons.add(new LargeButton("modernhardcorequesting.questBook.createSet", 185, 50) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;
@@ -297,7 +297,7 @@ public class GuiQuestBook extends GuiBase {
             }
         });
 
-        buttons.add(new LargeButton("hqm.questBook.createGroup", 100, 175) {
+        buttons.add(new LargeButton("modernhardcorequesting.questBook.createGroup", 100, 175) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;
@@ -315,7 +315,7 @@ public class GuiQuestBook extends GuiBase {
             }
         });
 
-        buttons.add(new LargeButton("hqm.questBook.createTier", 100, 200) {
+        buttons.add(new LargeButton("modernhardcorequesting.questBook.createTier", 100, 200) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;
@@ -368,7 +368,7 @@ public class GuiQuestBook extends GuiBase {
             }
         });
 
-        buttons.add(new LargeButton("hqm.questBook.createTier", 20, 20) {
+        buttons.add(new LargeButton("modernhardcorequesting.questBook.createTier", 20, 20) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;
@@ -513,8 +513,8 @@ public class GuiQuestBook extends GuiBase {
             if (currentMode == EditMode.DELETE) {
                 GlStateManager.pushMatrix();
                 GlStateManager.translate(0, 0, 200);
-                drawCenteredString(Translator.translate("hqm.questBook.warning"), 0, 0, 2F, TEXTURE_WIDTH, TEXTURE_HEIGHT, 0xFF0000);
-                drawCenteredString(Translator.translate("hqm.questBook.deleteOnClick"), 0, fontRenderer.FONT_HEIGHT * 2, 1F, TEXTURE_WIDTH, TEXTURE_HEIGHT, 0xFF0000);
+                drawCenteredString(Translator.translate("modernhardcorequesting.questBook.warning"), 0, 0, 2F, TEXTURE_WIDTH, TEXTURE_HEIGHT, 0xFF0000);
+                drawCenteredString(Translator.translate("modernhardcorequesting.questBook.deleteOnClick"), 0, fontRenderer.FONT_HEIGHT * 2, 1F, TEXTURE_WIDTH, TEXTURE_HEIGHT, 0xFF0000);
                 applyColor(0xFFFFFFFF);
                 ResourceHelper.bindResource(MAP_TEXTURE);
                 GlStateManager.popMatrix();
@@ -528,9 +528,9 @@ public class GuiQuestBook extends GuiBase {
         buttons.forEach(button -> button.drawMouseOver(this, player, x, y));
 
         if (shouldDisplayAndIsInArrowBounds(false, x, y)) {
-            drawMouseOver(Translator.translate("hqm.questBook.goBack") + "\n" + GuiColor.GRAY + Translator.translate("hqm.questBook.rightClick"), x + left, y + top);
+            drawMouseOver(Translator.translate("modernhardcorequesting.questBook.goBack") + "\n" + GuiColor.GRAY + Translator.translate("modernhardcorequesting.questBook.rightClick"), x + left, y + top);
         } else if (shouldDisplayAndIsInArrowBounds(true, x, y)) {
-            drawMouseOver(Translator.translate("hqm.questBook.backToMenu"), x + left, y + top);
+            drawMouseOver(Translator.translate("modernhardcorequesting.questBook.backToMenu"), x + left, y + top);
         }
     }
 
@@ -721,18 +721,18 @@ public class GuiQuestBook extends GuiBase {
     }
 
     private void drawMenuPage(int x, int y) {
-        drawString(Translator.translate("hqm.questBook.lives"), INFO_RIGHT_X, INFO_LIVES_Y, 0x404040);
-        drawString(Translator.translate("hqm.questBook.party"), INFO_RIGHT_X, INFO_TEAM_Y, 0x404040);
-        drawString(Translator.translate("hqm.questBook.quests"), INFO_LEFT_X, INFO_QUESTS_Y, 0x404040);
-        drawString(Translator.translate("hqm.questBook.reputation"), INFO_LEFT_X, INFO_REPUTATION_Y, 0x404040);
+        drawString(Translator.translate("modernhardcorequesting.questBook.lives"), INFO_RIGHT_X, INFO_LIVES_Y, 0x404040);
+        drawString(Translator.translate("modernhardcorequesting.questBook.party"), INFO_RIGHT_X, INFO_TEAM_Y, 0x404040);
+        drawString(Translator.translate("modernhardcorequesting.questBook.quests"), INFO_LEFT_X, INFO_QUESTS_Y, 0x404040);
+        drawString(Translator.translate("modernhardcorequesting.questBook.reputation"), INFO_LEFT_X, INFO_REPUTATION_Y, 0x404040);
 
         QuestSet.drawQuestInfo(this, null, INFO_LEFT_X, INFO_QUESTS_Y + (int) (TEXT_HEIGHT * 1.5F));
-        drawString(Translator.translate("hqm.questBook.showQuests"), INFO_LEFT_X, INFO_QUESTS_Y + QUEST_CLICK_TEXT_Y, 0.7F, 0x707070);
+        drawString(Translator.translate("modernhardcorequesting.questBook.showQuests"), INFO_LEFT_X, INFO_QUESTS_Y + QUEST_CLICK_TEXT_Y, 0.7F, 0x707070);
 
         if (QuestingData.isHardcoreActive()) {
             boolean almostOut = QuestingData.getQuestingData(player).getLives() == QuestingData.getQuestingData(player).getLivesToStayAlive();
             if (almostOut) {
-                drawString(GuiColor.RED + Translator.translate("hqm.questBook.deadOut"), INFO_RIGHT_X + 50, INFO_LIVES_Y + 2, 0.7F, 0x404040);
+                drawString(GuiColor.RED + Translator.translate("modernhardcorequesting.questBook.deadOut"), INFO_RIGHT_X + 50, INFO_LIVES_Y + 2, 0.7F, 0x404040);
             }
 
             GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
@@ -753,13 +753,13 @@ public class GuiQuestBook extends GuiBase {
                 drawItemStack(new ItemStack(ModItems.hearts, 1, 3), heartX + spacing * i, INFO_LIVES_Y + INFO_HEARTS_Y, almostOut);
             }
         } else {
-            drawString(getLinesFromText(Translator.translate("hqm.questBook.infiniteLives"), 0.5F, PAGE_WIDTH - 30), INFO_RIGHT_X, INFO_LIVES_Y + 12, 0.5F, 0x707070);
+            drawString(getLinesFromText(Translator.translate("modernhardcorequesting.questBook.infiniteLives"), 0.5F, PAGE_WIDTH - 30), INFO_RIGHT_X, INFO_LIVES_Y + 12, 0.5F, 0x707070);
         }
 
 
         int deaths = DeathStats.getDeathStats(QuestingData.getUserUUID(player)).getTotalDeaths();
-        drawString(Translator.translate(deaths != 1, "hqm.questBook.deaths", deaths), INFO_RIGHT_X, INFO_DEATHS_Y + DEATH_TEXT_Y, 0.7F, 0x404040);
-        drawString(Translator.translate("hqm.questBook.moreInfo"), INFO_RIGHT_X, INFO_DEATHS_Y + DEATH_CLICK_TEXT_Y, 0.7F, 0x707070);
+        drawString(Translator.translate(deaths != 1, "modernhardcorequesting.questBook.deaths", deaths), INFO_RIGHT_X, INFO_DEATHS_Y + DEATH_TEXT_Y, 0.7F, 0x404040);
+        drawString(Translator.translate("modernhardcorequesting.questBook.moreInfo"), INFO_RIGHT_X, INFO_DEATHS_Y + DEATH_CLICK_TEXT_Y, 0.7F, 0x707070);
 
 
         String str;
@@ -767,9 +767,9 @@ public class GuiQuestBook extends GuiBase {
         if (team.isSingle()) {
             int invites = team.getInvites() == null ? 0 : team.getInvites().size();
             if (invites > 0) {
-                str = Translator.translate(invites != 1, "hqm.questBook.invites", invites);
+                str = Translator.translate(invites != 1, "modernhardcorequesting.questBook.invites", invites);
             } else {
-                str = Translator.translate("hqm.questBook.notInParty");
+                str = Translator.translate("modernhardcorequesting.questBook.notInParty");
             }
         } else {
             int players = 0;
@@ -778,15 +778,15 @@ public class GuiQuestBook extends GuiBase {
                     players++;
                 }
             }
-            str = Translator.translate(players != 1, "hqm.questBook.inParty", players);
+            str = Translator.translate(players != 1, "modernhardcorequesting.questBook.inParty", players);
         }
 
         drawString(str, INFO_RIGHT_X, INFO_TEAM_Y + TEAM_TEXT_Y, 0.7F, 0x404040);
-        drawString(Translator.translate("hqm.questBook.openParty"), INFO_RIGHT_X, INFO_TEAM_Y + TEAM_CLICK_TEXT_Y, 0.7F, 0x707070);
+        drawString(Translator.translate("modernhardcorequesting.questBook.openParty"), INFO_RIGHT_X, INFO_TEAM_Y + TEAM_CLICK_TEXT_Y, 0.7F, 0x707070);
 
         if (isOpBook) {
-            drawString(Translator.translate("hqm.questBook.resetParty"), 22, 182, 0.6F, 0x404040);
-            drawString(getLinesFromText(Translator.translate("hqm.questBook.shiftCtrlConfirm"), 0.6F, 70), 22, 192, 0.6F, GuiColor.RED.getHexColor());
+            drawString(Translator.translate("modernhardcorequesting.questBook.resetParty"), 22, 182, 0.6F, 0x404040);
+            drawString(getLinesFromText(Translator.translate("modernhardcorequesting.questBook.shiftCtrlConfirm"), 0.6F, 70), 22, 192, 0.6F, GuiColor.RED.getHexColor());
         }
 
 
@@ -796,9 +796,9 @@ public class GuiQuestBook extends GuiBase {
     private void drawMainPage() {
         int startLine = mainDescriptionScroll.isVisible(this) ? Math.round((Quest.getMainDescription(this).size() - VISIBLE_MAIN_DESCRIPTION_LINES) * mainDescriptionScroll.getScroll()) : 0;
         drawString(Quest.getMainDescription(this), startLine, VISIBLE_MAIN_DESCRIPTION_LINES, DESCRIPTION_X, DESCRIPTION_Y, 0.7F, 0x404040);
-        drawCenteredString(Translator.translate("hqm.questBook.start"), 0, 195, 0.7F, PAGE_WIDTH, TEXTURE_HEIGHT - 195, 0x707070);
+        drawCenteredString(Translator.translate("modernhardcorequesting.questBook.start"), 0, 195, 0.7F, PAGE_WIDTH, TEXTURE_HEIGHT - 195, 0x707070);
         if (SoundHandler.hasLoreMusic() && !SoundHandler.isLorePlaying()) {
-            drawCenteredString(Translator.translate("hqm.questBook.playAgain"), PAGE_WIDTH, 195, 0.7F, PAGE_WIDTH - 10, TEXTURE_HEIGHT - 195, 0x707070);
+            drawCenteredString(Translator.translate("modernhardcorequesting.questBook.playAgain"), PAGE_WIDTH, 195, 0.7F, PAGE_WIDTH - 10, TEXTURE_HEIGHT - 195, 0x707070);
         }
         if (QuestLine.getActiveQuestLine().front == null && QuestLine.getActiveQuestLine().mainPath != null) {
             File file = new File(HardcoreQuesting.configDir, "front.png");

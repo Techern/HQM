@@ -13,6 +13,6 @@ public class CommandVersion extends CommandBase {
 
     @Override
     public void handleCommand(ICommandSender sender, String[] arguments) {
-        sendChat(sender, "\u00A7a" + Translator.translate("hqm.message.version", ModInformation.VERSION));
+        sendChat(sender, "\u00A7a" + Translator.translate("modernhardcorequesting.message.version", ModInformation.VERSION));
     }
 }

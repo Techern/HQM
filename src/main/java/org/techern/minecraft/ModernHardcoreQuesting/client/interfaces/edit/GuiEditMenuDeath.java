@@ -36,8 +36,8 @@ public class GuiEditMenuDeath extends GuiEditMenu {
     private static final int PLAYERS_Y = 20;
     private static final int PLAYERS_SPACING = 20;
     private static final int DEATHS_RIGHT = 140;
-    private static final String BEST_LABEL = "hqm.deathMenu.showWorst";
-    private static final String TOTAL_LABEL = "hqm.deathMenu.showTotal";
+    private static final String BEST_LABEL = "modernhardcorequesting.deathMenu.showWorst";
+    private static final String TOTAL_LABEL = "modernhardcorequesting.deathMenu.showTotal";
     private static final int BEST_X = 185;
     private static final int TOTAL_X = 255;
     private static final int LABEL_Y = 210;
@@ -99,7 +99,7 @@ public class GuiEditMenuDeath extends GuiEditMenu {
             }
 
             gui.drawString(stats.getName(), PLAYER_INFO_X, PLAYER_INFO_Y, 0x404040);
-            gui.drawString(Translator.translate("hqm.deathMenu.total", stats.getTotalDeaths()), PLAYER_INFO_X, PLAYER_INFO_Y + PLAYER_TOTAL_DEATHS_Y, 0.7F, 0x404040);
+            gui.drawString(Translator.translate("modernhardcorequesting.deathMenu.total", stats.getTotalDeaths()), PLAYER_INFO_X, PLAYER_INFO_Y + PLAYER_TOTAL_DEATHS_Y, 0.7F, 0x404040);
 
             for (int i = 0; i < DeathType.values().length; i++) {
                 int x = i % 3;
@@ -107,7 +107,7 @@ public class GuiEditMenuDeath extends GuiEditMenu {
 
                 String str = String.valueOf(stats.getDeaths(i));
                 if (str.length() > 5)
-                    str = Translator.translate("hqm.deathMenu.lots");
+                    str = Translator.translate("modernhardcorequesting.deathMenu.lots");
                 float f = DIGIT_TEXT_SIZE[str.length() - 1];
                 int offset = f == 1 ? 0 : Math.round(9 * (1 - f) - 1);
                 gui.drawString(str, TYPE_LOCATION_X + TYPE_SPACING_X * x + TEXT_OFFSET_X, TYPE_LOCATION_Y + TYPE_SPACING_Y * y + TEXT_OFFSET_Y + offset, f, 0x404040);

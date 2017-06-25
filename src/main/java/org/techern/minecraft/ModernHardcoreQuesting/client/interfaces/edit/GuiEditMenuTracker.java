@@ -15,12 +15,12 @@ public class GuiEditMenuTracker extends GuiEditMenuExtended {
 
         this.tracker = tracker;
 
-        textBoxes.add(new TextBoxNumber(gui, 0, "hqm.menuTracker.radius.title") {
+        textBoxes.add(new TextBoxNumber(gui, 0, "modernhardcorequesting.menuTracker.radius.title") {
             @Override
             protected void draw(GuiBase gui, boolean selected) {
                 super.draw(gui, selected);
 
-                gui.drawString(gui.getLinesFromText(Translator.translate("hqm.menuTracker.radius.desc"), 0.7F, 130), BOX_X, BOX_Y + BOX_OFFSET + TEXT_OFFSET, 0.7F, 0x404040);
+                gui.drawString(gui.getLinesFromText(Translator.translate("modernhardcorequesting.menuTracker.radius.desc"), 0.7F, 130), BOX_X, BOX_Y + BOX_OFFSET + TEXT_OFFSET, 0.7F, 0x404040);
             }
 
             @Override
@@ -39,7 +39,7 @@ public class GuiEditMenuTracker extends GuiEditMenuExtended {
     public void draw(GuiBase gui, int mX, int mY) {
         super.draw(gui, mX, mY);
 
-        gui.drawCenteredString(tracker.getCurrentQuest() != null ? tracker.getCurrentQuest().getName() : Translator.translate("hqm.menuTracker.noQuest"), 0, 5, 1F, 170, 20, 0x404040);
+        gui.drawCenteredString(tracker.getCurrentQuest() != null ? tracker.getCurrentQuest().getName() : Translator.translate("modernhardcorequesting.menuTracker.noQuest"), 0, 5, 1F, 170, 20, 0x404040);
     }
 
     @Override

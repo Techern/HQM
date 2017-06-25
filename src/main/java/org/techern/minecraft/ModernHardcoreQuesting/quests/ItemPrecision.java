@@ -130,7 +130,7 @@ public abstract class ItemPrecision {
     }
 
     public String getLocalizationTag() {
-        return "hqm.precision." + tag;
+        return "modernhardcorequesting.precision." + tag;
     }
 
     public String getName() {

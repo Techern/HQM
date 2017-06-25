@@ -212,7 +212,7 @@ public class QuestingData {
 
     public static void disableVanillaHardcore(ICommandSender sender) {
         if (sender.getServer().getEntityWorld().getWorldInfo().isHardcoreModeEnabled()) {
-            sender.sendMessage(new TextComponentTranslation("hqm.message.vanillaHardcore"));
+            sender.sendMessage(new TextComponentTranslation("modernhardcorequesting.message.vanillaHardcore"));
             try {
                 ReflectionHelper.setPrivateValue(WorldInfo.class, sender.getEntityWorld().getWorldInfo(), false, 20);
             } catch (Throwable ex) {
@@ -220,7 +220,7 @@ public class QuestingData {
             }
 
             if (!sender.getServer().getEntityWorld().getWorldInfo().isHardcoreModeEnabled()) {
-                sender.sendMessage(new TextComponentTranslation("hqm.message.vanillaHardcoreOverride"));
+                sender.sendMessage(new TextComponentTranslation("modernhardcorequesting.message.vanillaHardcoreOverride"));
             }
         }
     }
@@ -367,7 +367,7 @@ public class QuestingData {
     public void removeLifeAndSendMessage(EntityPlayer player) {
         boolean isDead = !removeLives(player, 1);
         if (!isDead) {
-            player.sendMessage(new TextComponentString(Translator.translate(getLives() != 1, "hqm.message.lostLife", getLives())));
+            player.sendMessage(new TextComponentString(Translator.translate(getLives() != 1, "modernhardcorequesting.message.lostLife", getLives())));
         }
         if (getTeam().isSharingLives()) {
             for (PlayerEntry entry : getTeam().getPlayers()) {
@@ -375,7 +375,7 @@ public class QuestingData {
                     EntityPlayer other = getPlayer(entry.getUUID());
                     if (other != null) {
                         other.sendMessage(new TextComponentString(
-                                Translator.translate(getLives() != 1, "hqm.message.lostTeamLife", getUserUUID(player), (isDead ? " " + Translator.translate("hqm.message.andBanned") : ""), getLives())));
+                                Translator.translate(getLives() != 1, "modernhardcorequesting.message.lostTeamLife", getUserUUID(player), (isDead ? " " + Translator.translate("modernhardcorequesting.message.andBanned") : ""), getLives())));
                     }
                 }
             }
@@ -464,7 +464,7 @@ public class QuestingData {
         MinecraftServer mcServer = playerEntity.getServer();
 
         if (mcServer.isSinglePlayer() && playerEntity.getName().equals(mcServer.getServerOwner())) {
-            ((EntityPlayerMP) playerEntity).connection.disconnect(Translator.translate("hqm.message.gameOver"));
+            ((EntityPlayerMP) playerEntity).connection.disconnect(Translator.translate("modernhardcorequesting.message.gameOver"));
 
             /*ReflectionHelper.setPrivateValue(MinecraftServer.class, mcServer, true, 41);
             mcServer.getActiveAnvilConverter().flushCache();
@@ -485,7 +485,7 @@ public class QuestingData {
             mcServer.getPlayerList().getBannedPlayers().addEntry(userlistbansentry);
 
             //mcServer.getConfigurationManager().getBannedPlayers().put(banentry);
-            ((EntityPlayerMP) playerEntity).connection.disconnect(Translator.translate("hqm.message.gameOver"));
+            ((EntityPlayerMP) playerEntity).connection.disconnect(Translator.translate("modernhardcorequesting.message.gameOver"));
             SoundHandler.playToAll(Sounds.DEATH);
         }
 

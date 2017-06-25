@@ -41,7 +41,7 @@ public class PlayerTracker {
         if (QuestingData.isHardcoreActive())
             sendLoginMessage(player);
         else if (ModConfig.NO_HARDCORE_MESSAGE)
-            player.sendMessage(new TextComponentTranslation("hqm.message.noHardcore"));
+            player.sendMessage(new TextComponentTranslation("modernhardcorequesting.message.noHardcore"));
 
         NBTTagCompound tags = player.getEntityData();
         if (tags.hasKey(HQ_TAG)) {
@@ -58,8 +58,8 @@ public class PlayerTracker {
 
     private void sendLoginMessage(EntityPlayer player) {
         player.sendMessage(new TextComponentString(
-                Translator.translate("hqm.message.hardcore") + " "
-                        + Translator.translate(getRemainingLives(player) != 1, "hqm.message.livesLeft", getRemainingLives(player))
+                Translator.translate("modernhardcorequesting.message.hardcore") + " "
+                        + Translator.translate(getRemainingLives(player) != 1, "modernhardcorequesting.message.livesLeft", getRemainingLives(player))
         ));
 
     }

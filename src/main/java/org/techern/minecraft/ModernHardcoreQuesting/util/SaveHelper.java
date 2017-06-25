@@ -90,15 +90,15 @@ public final class SaveHelper {
 
         if (isLarge) {
             if (total == 0) {
-                gui.drawString(Translator.translate("hqm.editType.allSaved"), X + START_X, Y + START_Y, 0.7F, 0x404040);
+                gui.drawString(Translator.translate("modernhardcorequesting.editType.allSaved"), X + START_X, Y + START_Y, 0.7F, 0x404040);
             } else {
                 if (saveTime == 0) {
-                    gui.drawString(Translator.translate("hqm.editType.neverSaved"), X + START_X, Y + START_Y, 0.7F, 0x404040);
+                    gui.drawString(Translator.translate("modernhardcorequesting.editType.neverSaved"), X + START_X, Y + START_Y, 0.7F, 0x404040);
                 } else {
                     gui.drawString(formatTime((int) ((System.currentTimeMillis() - saveTime) / 60000)), X + START_X, Y + START_Y, 0.7F, 0x404040);
                 }
 
-                gui.drawString(Translator.translate("hqm.editType.unsaved", total), X + START_X, Y + START_Y + 2 * FONT_HEIGHT, 0.7F, 0x404040);
+                gui.drawString(Translator.translate("modernhardcorequesting.editType.unsaved", total), X + START_X, Y + START_Y + 2 * FONT_HEIGHT, 0.7F, 0x404040);
                 int others = total;
                 for (int i = 0; i < LISTED_TYPES; i++) {
                     ListElement element = sortedList.get(i);
@@ -110,7 +110,7 @@ public final class SaveHelper {
                     others -= element.count;
                 }
                 if (others > 0) {
-                    gui.drawString(Translator.translate("hqm.editType.other", others), X + START_X + INDENT, Y + START_Y + (LISTED_TYPES + 3) * FONT_HEIGHT, 0.7F, 0x404040);
+                    gui.drawString(Translator.translate("modernhardcorequesting.editType.other", others), X + START_X + INDENT, Y + START_Y + (LISTED_TYPES + 3) * FONT_HEIGHT, 0.7F, 0x404040);
                 }
             }
         } else {
@@ -139,12 +139,12 @@ public final class SaveHelper {
 
         if (hours == 0) {
             if (minutes == 0) {
-                return Translator.translate("hqm.editType.savedRecent");
+                return Translator.translate("modernhardcorequesting.editType.savedRecent");
             } else {
-                return Translator.translate(minutes != 1, "hqm.editType.savedMinutes", minutes);
+                return Translator.translate(minutes != 1, "modernhardcorequesting.editType.savedMinutes", minutes);
             }
         } else {
-            return Translator.translate(hours != 1, "hqm.editType.savedMinutes", hours);
+            return Translator.translate(hours != 1, "modernhardcorequesting.editType.savedMinutes", hours);
         }
     }
 
@@ -241,7 +241,7 @@ public final class SaveHelper {
             }
 
             private String translate() {
-                return Translator.translate("hqm.editType." + id);
+                return Translator.translate("modernhardcorequesting.editType." + id);
             }
         }
 
@@ -283,7 +283,7 @@ public final class SaveHelper {
             }
 
             private String translate() {
-                return Translator.translate("hqm.editType." + id);
+                return Translator.translate("modernhardcorequesting.editType." + id);
             }
         }
     }

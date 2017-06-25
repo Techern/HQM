@@ -48,7 +48,7 @@ public class GuiReward extends GuiBase {
         int myWeight = group.getTier().getWeights()[bagTier];
         float chance = ((float) myWeight / totalWeight);
 
-        statisticsText = Translator.translate("hqm.rewardGui.chance", ((int) (chance * 10000)) / 100F);
+        statisticsText = Translator.translate("modernhardcorequesting.rewardGui.chance", ((int) (chance * 10000)) / 100F);
 
 
         lines = (int) Math.ceil((float) group.getItems().size() / ITEMS_PER_LINE);
@@ -102,12 +102,12 @@ public class GuiReward extends GuiBase {
         // fall back to the tier's name if this particular bag has no title,
         // or if the user explicitly asked us to do so.
         if (ModConfig.ALWAYS_USE_TIER_NAME_FOR_REWARD_TITLES || title == null || title.isEmpty()) {
-            title = Translator.translate("hqm.rewardGui.tierReward", group.getTier().getName());
+            title = Translator.translate("modernhardcorequesting.rewardGui.tierReward", group.getTier().getName());
         }
 
         drawCenteredString(group.getTier().getColor() + title, 0, 0, 1F, TEXTURE_WIDTH, TITLE_HEIGHT, 0x404040);
         drawCenteredString(statisticsText, 0, TITLE_HEIGHT, 0.7F, TEXTURE_WIDTH, TOP_HEIGHT - TITLE_HEIGHT, 0x707070);
-        drawCenteredString(Translator.translate("hqm.rewardGui.close"), 0, TOP_HEIGHT + lines * MIDDLE_HEIGHT, 0.7F, TEXTURE_WIDTH, BOTTOM_HEIGHT, 0x707070);
+        drawCenteredString(Translator.translate("modernhardcorequesting.rewardGui.close"), 0, TOP_HEIGHT + lines * MIDDLE_HEIGHT, 0.7F, TEXTURE_WIDTH, BOTTOM_HEIGHT, 0x707070);
 
         for (Reward reward : rewards) {
             try {
@@ -130,7 +130,7 @@ public class GuiReward extends GuiBase {
                             if (info.size() > 0) {
                                 str.add((String) info.get(0));
                                 if (info.size() > 1) {
-                                    str.add(GuiColor.GRAY + Translator.translate("hqm.rewardGui.shiftInfo"));
+                                    str.add(GuiColor.GRAY + Translator.translate("modernhardcorequesting.rewardGui.shiftInfo"));
                                 }
                             }
                             drawMouseOver(str, mX0, mY0);

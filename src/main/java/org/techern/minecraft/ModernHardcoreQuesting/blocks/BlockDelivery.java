@@ -44,9 +44,9 @@ public class BlockDelivery extends BlockContainer {
                     TileEntity te = world.getTileEntity(pos);
                     if (te != null && te instanceof TileEntityBarrel) {
                         if (((TileEntityBarrel) te).getCurrentTask() != null && state.getValue(BOUND))
-                            player.sendMessage(new TextComponentTranslation("tile.hqm:item_barrel.boundTo", Quest.getQuest(((TileEntityBarrel) te).selectedQuest).getName()));
+                            player.sendMessage(new TextComponentTranslation("tile.modernhardcorequesting:item_barrel.boundTo", Quest.getQuest(((TileEntityBarrel) te).selectedQuest).getName()));
                         else
-                            player.sendMessage(new TextComponentTranslation("tile.hqm:item_barrel.nonBound"));
+                            player.sendMessage(new TextComponentTranslation("tile.modernhardcorequesting:item_barrel.nonBound"));
                     }
                 }
                 return true;
@@ -57,11 +57,11 @@ public class BlockDelivery extends BlockContainer {
                         ((TileEntityBarrel) te).storeSettings(player);
 
                         if (((TileEntityBarrel) te).getCurrentTask() != null){
-                            player.sendMessage(new TextComponentTranslation("tile.hqm:item_barrel.bindTo", Quest.getQuest(((TileEntityBarrel) te).selectedQuest).getName()));
+                            player.sendMessage(new TextComponentTranslation("tile.modernhardcorequesting:item_barrel.bindTo", Quest.getQuest(((TileEntityBarrel) te).selectedQuest).getName()));
                             world.setBlockState(pos, this.getDefaultState().withProperty(BOUND, true), 3);
                         }
                         else
-                            player.sendMessage(new TextComponentTranslation("hqm.message.noTaskSelected"));
+                            player.sendMessage(new TextComponentTranslation("modernhardcorequesting.message.noTaskSelected"));
                     }
                 }
                 return true;

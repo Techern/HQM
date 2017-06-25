@@ -11,7 +11,7 @@ public class CommandQuest extends CommandBase {
 
     @Override
     public void handleCommand(ICommandSender sender, String[] arguments) {
-        sendChat(sender, QuestingData.isQuestActive() ? "hqm.message.questAlreadyActivated" : "hqm.message.questActivated");
+        sendChat(sender, QuestingData.isQuestActive() ? "modernhardcorequesting.message.questAlreadyActivated" : "modernhardcorequesting.message.questActivated");
         QuestingData.activateQuest(true);
     }
 }

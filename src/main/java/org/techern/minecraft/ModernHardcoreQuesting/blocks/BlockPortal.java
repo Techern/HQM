@@ -56,9 +56,9 @@ public class BlockPortal extends BlockContainer {
                     if (tile != null && tile instanceof TileEntityPortal) {
                         ((TileEntityPortal) tile).setCurrentQuest();
                         if (((TileEntityPortal) tile).getCurrentQuest() != null)
-                            player.sendMessage(Translator.translateToIChatComponent("tile.hqm:quest_portal_0.bindTo", ((TileEntityPortal) tile).getCurrentQuest().getName()));
+                            player.sendMessage(Translator.translateToIChatComponent("tile.modernhardcorequesting:quest_portal_0.bindTo", ((TileEntityPortal) tile).getCurrentQuest().getName()));
                         else
-                            player.sendMessage(Translator.translateToIChatComponent("hqm.message.noTaskSelected"));
+                            player.sendMessage(Translator.translateToIChatComponent("modernhardcorequesting.message.noTaskSelected"));
                     }
                 }
                 return true;

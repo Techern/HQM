@@ -127,7 +127,7 @@ public enum DeathType {
     abstract boolean isSourceValid(DamageSource source);
 
     public String getName() {
-        return Translator.translate("hqm.deathType." + name);
+        return Translator.translate("modernhardcorequesting.deathType." + name);
     }
 
     /*Fire: inFire, onFire, fireball

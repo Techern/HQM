@@ -20,7 +20,7 @@ public class CommandEdit extends CommandBase {
             if (QuestingData.hasData(player)) {
                 player.inventory.addItemStackToInventory(ItemQuestBook.getOPBook(player));
             } else {
-                sendChat(player, "hqm.message.noPlayer");
+                sendChat(player, "modernhardcorequesting.message.noPlayer");
             }
         }
     }

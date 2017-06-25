@@ -3,8 +3,8 @@ package org.techern.minecraft.ModernHardcoreQuesting.team;
 import org.techern.minecraft.ModernHardcoreQuesting.util.Translator;
 
 public enum LifeSetting {
-    SHARE("hqm.team.sharedLives.title", "hqm.team.sharedLives.desc"),
-    INDIVIDUAL("hqm.team.individualLives.title", "hqm.team.individualLives.desc");
+    SHARE("modernhardcorequesting.team.sharedLives.title", "modernhardcorequesting.team.sharedLives.desc"),
+    INDIVIDUAL("modernhardcorequesting.team.individualLives.title", "modernhardcorequesting.team.individualLives.desc");
 
     private String title;
     private String description;

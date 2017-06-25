@@ -32,7 +32,7 @@ public class GuiEditMenuReputationReward extends GuiEditMenuExtended {
             }
         }
 
-        textBoxes.add(new TextBoxNumber(gui, 0, "hqm.repReward.value") {
+        textBoxes.add(new TextBoxNumber(gui, 0, "modernhardcorequesting.repReward.value") {
             @Override
             protected boolean isVisible() {
                 return selectedReward != null;
@@ -54,7 +54,7 @@ public class GuiEditMenuReputationReward extends GuiEditMenuExtended {
             }
         });
 
-        buttons.add(new LargeButton("hqm.repReward.create", 20, 20) {
+        buttons.add(new LargeButton("modernhardcorequesting.repReward.create", 20, 20) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;
@@ -71,7 +71,7 @@ public class GuiEditMenuReputationReward extends GuiEditMenuExtended {
             }
         });
 
-        buttons.add(new LargeButton("hqm.repReward.delete", 80, 20) {
+        buttons.add(new LargeButton("modernhardcorequesting.repReward.delete", 80, 20) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;
@@ -103,7 +103,7 @@ public class GuiEditMenuReputationReward extends GuiEditMenuExtended {
             }
         } else {
             if (error == null) {
-                error = gui.getLinesFromText(Translator.translate("hqm.repReward.noValidReps"), 0.7F, 140);
+                error = gui.getLinesFromText(Translator.translate("modernhardcorequesting.repReward.noValidReps"), 0.7F, 140);
             }
 
             gui.drawString(error, START_X, ERROR_Y, 0.7F, 0x404040);

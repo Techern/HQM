@@ -146,7 +146,7 @@ public class Reputation {
         }
 
         if (selectedReputation != null) {
-            String neutralName = Translator.translate("hqm.rep.neutral", selectedReputation.neutral.getName());
+            String neutralName = Translator.translate("modernhardcorequesting.rep.neutral", selectedReputation.neutral.getName());
             gui.drawString(neutralName, REPUTATION_MARKER_LIST_X, REPUTATION_NEUTRAL_Y, gui.inBounds(REPUTATION_MARKER_LIST_X, REPUTATION_NEUTRAL_Y, gui.getStringWidth(neutralName), FONT_HEIGHT, mX, mY) ? 0xAAAAAA : 0x404040);
 
             int start = gui.reputationTierScroll.isVisible(gui) ? Math.round((selectedReputation.markers.size() - GuiQuestBook.VISIBLE_REPUTATION_TIERS) * gui.reputationTierScroll.getScroll()) : 0;
@@ -220,7 +220,7 @@ public class Reputation {
         }
 
         if (selectedReputation != null) {
-            String neutralName = Translator.translate("hqm.rep.neutral", selectedReputation.neutral.getName());
+            String neutralName = Translator.translate("modernhardcorequesting.rep.neutral", selectedReputation.neutral.getName());
             if (gui.inBounds(REPUTATION_MARKER_LIST_X, REPUTATION_NEUTRAL_Y, gui.getStringWidth(neutralName), FONT_HEIGHT, mX, mY)) {
                 if (gui.getCurrentMode() == EditMode.RENAME) {
                     gui.setEditMenu(new GuiEditMenuTextEditor(gui, player, selectedReputation.neutral));
@@ -444,7 +444,7 @@ public class Reputation {
             str = text;
         } else if (current == null || lower != null || upper != null) {
             if (lower == null && upper == null) {
-                str = GuiColor.RED + Translator.translate("hqm.rep" + (inverted ? "no" : "any") + "ValueOf") + " " + name;
+                str = GuiColor.RED + Translator.translate("modernhardcorequesting.rep" + (inverted ? "no" : "any") + "ValueOf") + " " + name;
 
             } else {
                 String lowerName = lower == null ? null : GuiScreen.isShiftKeyDown() ? String.valueOf(lower.getValue()) : lower.getName();
@@ -459,7 +459,7 @@ public class Reputation {
                         }
                     } else {
                         if (inverted) {
-                            str = Translator.translate("hqm.rep.not") + " (" + lowerName + " <= " + name + " <= " + upperName + ")";
+                            str = Translator.translate("modernhardcorequesting.rep.not") + " (" + lowerName + " <= " + name + " <= " + upperName + ")";
                         } else {
                             str = lowerName + " <= " + name + " <= " + upperName;
                         }
@@ -503,7 +503,7 @@ public class Reputation {
             }
         }
 
-        return error == null ? null : Translator.translate("hqm.rep." + error);
+        return error == null ? null : Translator.translate("modernhardcorequesting.rep." + error);
     }
 
     public ReputationMarker getCurrentMarker(int value) {

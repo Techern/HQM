@@ -16,7 +16,7 @@ public class GuiEditMenuReputationKillTask extends GuiEditMenuExtended {
         kills = task.getKills();
         this.task = task;
 
-        textBoxes.add(new TextBoxNumber(gui, 0, "hqm.mobTask.reqKills") {
+        textBoxes.add(new TextBoxNumber(gui, 0, "modernhardcorequesting.mobTask.reqKills") {
             @Override
             protected int getValue() {
                 return kills;

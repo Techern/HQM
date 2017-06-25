@@ -174,12 +174,12 @@ public class DeathStats {
         private String[] messages = new String[DeathType.values().length];
 
         private DeathStatsBest() {
-            super("hqm.deathStat.worstPlayers");
+            super("modernhardcorequesting.deathStat.worstPlayers");
             for (int i = 0; i < messages.length; i++) {
                 Arrays.sort(clientDeathList, deathTypeComparator[i]);
                 if (clientDeathList.length < 1) {
                     deaths[i] = 0;
-                    messages[i] = GuiColor.RED + Translator.translate("hqm.deathStat.noOneDied");
+                    messages[i] = GuiColor.RED + Translator.translate("modernhardcorequesting.deathStat.noOneDied");
                 } else {
                     deaths[i] = clientDeathList[0].getDeaths(i);
                     messages[i] = "";
@@ -197,7 +197,7 @@ public class DeathStats {
                         if (j != 0) {
                             messages[i] += "\n";
                         }
-                        messages[i] += colourPrefixes[standing] + Translator.translate("hqm.deathStat." + placePrefixes[standing]);
+                        messages[i] += colourPrefixes[standing] + Translator.translate("modernhardcorequesting.deathStat." + placePrefixes[standing]);
                         messages[i] += GuiColor.WHITE + " " + clientDeathList[j].getName() + ": " + clientDeathList[j].getDeaths(i);
                     }
 
@@ -223,7 +223,7 @@ public class DeathStats {
         private int[] count = new int[DeathType.values().length];
 
         private DeathStatsTotal() {
-            super("hqm.deathStat.everyone");
+            super("modernhardcorequesting.deathStat.everyone");
             for (int i = 0; i < count.length; i++) {
                 for (DeathStats deathStats : clientDeathList) {
                     deaths[i] += deathStats.getDeaths(i);
@@ -239,8 +239,8 @@ public class DeathStats {
         public String getDescription(int id) {
             return super.getDescription(id) + "\n\n" +
                     (count[id] == 0 ?
-                            GuiColor.RED + Translator.translate("hqm.deathStat.noOneDied") :
-                            GuiColor.GREEN.toString() + count[id] + " " + Translator.translate("hqm.deathStat.player" + (count[id] == 1 ? "" : "s")) + " " + Translator.translate("hqm.deathStat.diedThisWay"));
+                            GuiColor.RED + Translator.translate("modernhardcorequesting.deathStat.noOneDied") :
+                            GuiColor.GREEN.toString() + count[id] + " " + Translator.translate("modernhardcorequesting.deathStat.player" + (count[id] == 1 ? "" : "s")) + " " + Translator.translate("modernhardcorequesting.deathStat.diedThisWay"));
         }
 
         @Override

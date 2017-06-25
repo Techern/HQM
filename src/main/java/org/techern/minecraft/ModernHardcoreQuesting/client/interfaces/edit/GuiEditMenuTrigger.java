@@ -20,7 +20,7 @@ public class GuiEditMenuTrigger extends GuiEditMenuExtended {
         this.type = quest.getTriggerType();
         this.triggerTasks = quest.getTriggerTasks();
 
-        textBoxes.add(new TextBoxNumber(gui, 0, "hqm.menuTrigger.taskCount") {
+        textBoxes.add(new TextBoxNumber(gui, 0, "modernhardcorequesting.menuTrigger.taskCount") {
             @Override
             protected int getValue() {
                 return triggerTasks;

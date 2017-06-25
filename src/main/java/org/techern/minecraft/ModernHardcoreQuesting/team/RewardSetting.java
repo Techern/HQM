@@ -3,9 +3,9 @@ package org.techern.minecraft.ModernHardcoreQuesting.team;
 import org.techern.minecraft.ModernHardcoreQuesting.util.Translator;
 
 public enum RewardSetting {
-    ALL("hqm.team.allReward.title", "hqm.team.allReward.desc"),
-    ANY("hqm.team.anyReward.title", "hqm.team.anyReward.desc"),
-    RANDOM("hqm.team.randomReward.title", "hqm.team.randomReward.desc");
+    ALL("modernhardcorequesting.team.allReward.title", "modernhardcorequesting.team.allReward.desc"),
+    ANY("modernhardcorequesting.team.anyReward.title", "modernhardcorequesting.team.anyReward.desc"),
+    RANDOM("modernhardcorequesting.team.randomReward.title", "modernhardcorequesting.team.randomReward.desc");
 
     public static boolean isAllModeEnabled;
     private String title;

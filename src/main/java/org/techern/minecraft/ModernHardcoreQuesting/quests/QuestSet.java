@@ -126,20 +126,20 @@ public class QuestSet {
             String info;
             if (enabled) {
                 if (completed)
-                    info = Translator.translate("hqm.questBook.allQuests");
+                    info = Translator.translate("modernhardcorequesting.questBook.allQuests");
                 else
-                    info = Translator.translate("hqm.questBook.percentageQuests", ((completedCount * 100) / total));
+                    info = Translator.translate("modernhardcorequesting.questBook.percentageQuests", ((completedCount * 100) / total));
             } else
-                info = Translator.translate("hqm.questBook.locked");
+                info = Translator.translate("modernhardcorequesting.questBook.locked");
             gui.drawString(info, GuiQuestBook.LIST_X + LINE_2_X, setY + LINE_2_Y, 0.7F, color);
             if (enabled && unclaimed != 0) {
-                String toClaim = GuiColor.PURPLE.toString() + Translator.translate(unclaimed != 1, "hqm.questBook.unclaimedRewards", unclaimed);
+                String toClaim = GuiColor.PURPLE.toString() + Translator.translate(unclaimed != 1, "modernhardcorequesting.questBook.unclaimedRewards", unclaimed);
                 gui.drawString(toClaim, GuiQuestBook.LIST_X + LINE_2_X, setY + LINE_2_Y + 8, 0.7F, 0xFFFFFFFF);
             }
         }
 
         if ((Quest.isEditing && gui.getCurrentMode() == EditMode.CREATE)) {
-            gui.drawString(gui.getLinesFromText(Translator.translate("hqm.questBook.createNewSet"), 0.7F, 130), GuiQuestBook.DESCRIPTION_X, GuiQuestBook.DESCRIPTION_Y, 0.7F, 0x404040);
+            gui.drawString(gui.getLinesFromText(Translator.translate("modernhardcorequesting.questBook.createNewSet"), 0.7F, 130), GuiQuestBook.DESCRIPTION_X, GuiQuestBook.DESCRIPTION_Y, 0.7F, 0x404040);
         } else {
             if (GuiQuestBook.selectedSet != null) {
                 int startLine = descriptionScroll.isVisible(gui) ? Math.round((GuiQuestBook.selectedSet.getDescription(gui).size() - GuiQuestBook.VISIBLE_DESCRIPTION_LINES) * descriptionScroll.getScroll()) : 0;
@@ -185,15 +185,15 @@ public class QuestSet {
         }
 
         List<String> info = new ArrayList<>();
-        info.add(GuiColor.GRAY.toString() + Translator.translate(total != 1, "hqm.questBook.totalQuests", total));
-        info.add(GuiColor.CYAN.toString() + Translator.translate(enabled != 1, "hqm.questBook.unlockedQuests", enabled));
-        info.add(GuiColor.GREEN.toString() + Translator.translate(completed != 1, "hqm.questBook.completedQuests", completed));
-        info.add(GuiColor.LIGHT_BLUE.toString() + Translator.translate((enabled - completed) != 1, "hqm.questBook.totalQuests", enabled - completed));
+        info.add(GuiColor.GRAY.toString() + Translator.translate(total != 1, "modernhardcorequesting.questBook.totalQuests", total));
+        info.add(GuiColor.CYAN.toString() + Translator.translate(enabled != 1, "modernhardcorequesting.questBook.unlockedQuests", enabled));
+        info.add(GuiColor.GREEN.toString() + Translator.translate(completed != 1, "modernhardcorequesting.questBook.completedQuests", completed));
+        info.add(GuiColor.LIGHT_BLUE.toString() + Translator.translate((enabled - completed) != 1, "modernhardcorequesting.questBook.totalQuests", enabled - completed));
         if (reward > 0) {
-            info.add(GuiColor.PURPLE.toString() + Translator.translate(reward != 1, "hqm.questBook.unclaimedQuests", reward));
+            info.add(GuiColor.PURPLE.toString() + Translator.translate(reward != 1, "modernhardcorequesting.questBook.unclaimedQuests", reward));
         }
         if (Quest.isEditing && !GuiScreen.isCtrlKeyDown()) {
-            info.add(GuiColor.LIGHT_GRAY.toString() + Translator.translate(realTotal != 1, "hqm.questBook.inclInvisiQuests", realTotal));
+            info.add(GuiColor.LIGHT_GRAY.toString() + Translator.translate(realTotal != 1, "modernhardcorequesting.questBook.inclInvisiQuests", realTotal));
         }
         gui.drawString(info, x, y, 0.7F, 0x404040);
     }
@@ -371,7 +371,7 @@ public class QuestSet {
     @SideOnly(Side.CLIENT)
     public void draw(GuiQuestBook gui, int x0, int y0, int x, int y) {
         if (gui.isOpBook) {
-            gui.drawString(gui.getLinesFromText(Translator.translate("hqm.questBook.shiftSetReset"), 0.7F, 130), 184, 192, 0.7F, 0x707070);
+            gui.drawString(gui.getLinesFromText(Translator.translate("modernhardcorequesting.questBook.shiftSetReset"), 0.7F, 130), 184, 192, 0.7F, 0x707070);
         }
 
         EntityPlayer player = gui.getPlayer();
@@ -453,7 +453,7 @@ public class QuestSet {
                     if (editing) {
                         txt += "\n";
                     }
-                    txt += GuiColor.GRAY + Translator.translate("hqm.questBook.lockedQuest");
+                    txt += GuiColor.GRAY + Translator.translate("modernhardcorequesting.questBook.lockedQuest");
                 }
 
                 if (!enabled || editing) {
@@ -479,36 +479,36 @@ public class QuestSet {
                     }
 
                     if (editing && totalParentCount > 0) {
-                        txt += "\n" + GuiColor.GRAY + Translator.translate(totalParentCount != 1, "hqm.questBook.parentCount", (totalParentCount - totalCompletedCount), totalParentCount);
+                        txt += "\n" + GuiColor.GRAY + Translator.translate(totalParentCount != 1, "modernhardcorequesting.questBook.parentCount", (totalParentCount - totalCompletedCount), totalParentCount);
 
                         if (Keyboard.isKeyDown(Keyboard.KEY_R)) {
-                            txt += " [" + Translator.translate("hqm.questBook.holding", "R") + "]";
+                            txt += " [" + Translator.translate("modernhardcorequesting.questBook.holding", "R") + "]";
                             for (Quest parent : quest.getRequirements()) {
                                 txt += "\n" + GuiColor.GRAY + parent.getName();
                                 if (parent.isCompleted(player)) {
-                                    txt += " " + GuiColor.WHITE + " [" + Translator.translate("hqm.questBook.completed") + "]";
+                                    txt += " " + GuiColor.WHITE + " [" + Translator.translate("modernhardcorequesting.questBook.completed") + "]";
                                 }
                             }
                         } else {
-                            txt += " [" + Translator.translate("hqm.questBook.hold", "R") + "]";
+                            txt += " [" + Translator.translate("modernhardcorequesting.questBook.hold", "R") + "]";
                         }
                     }
 
                     int allowedUncompleted = quest.getUseModifiedParentRequirement() ? Math.max(0, quest.getRequirements().size() - quest.getParentRequirementCount()) : 0;
                     if (parentCount - completed > allowedUncompleted || (editing && parentCount > 0)) {
-                        txt += "\n" + GuiColor.PINK + Translator.translate(totalParentCount != 1, "hqm.questBook.parentCountElsewhere", (totalParentCount - totalCompletedCount), totalParentCount);
+                        txt += "\n" + GuiColor.PINK + Translator.translate(totalParentCount != 1, "modernhardcorequesting.questBook.parentCountElsewhere", (totalParentCount - totalCompletedCount), totalParentCount);
                         shouldDrawText = true;
                         if (editing) {
                             if (Keyboard.isKeyDown(Keyboard.KEY_E)) {
-                                txt += " [" + Translator.translate("hqm.questBook.holding", "E") + "]";
+                                txt += " [" + Translator.translate("modernhardcorequesting.questBook.holding", "E") + "]";
                                 for (Quest parent : externalQuests) {
                                     txt += "\n" + GuiColor.PINK + parent.getName() + " (" + parent.getQuestSet().getName() + ")";
                                     if (parent.isCompleted(player)) {
-                                        txt += " " + GuiColor.WHITE + " [" + Translator.translate("hqm.questBook.completed") + "]";
+                                        txt += " " + GuiColor.WHITE + " [" + Translator.translate("modernhardcorequesting.questBook.completed") + "]";
                                     }
                                 }
                             } else {
-                                txt += " [" + Translator.translate("hqm.questBook.hold", "E") + "]";
+                                txt += " [" + Translator.translate("modernhardcorequesting.questBook.hold", "E") + "]";
                             }
                         }
                     }
@@ -517,11 +517,11 @@ public class QuestSet {
                         txt += "\n" + GuiColor.MAGENTA;
                         int amount = quest.getParentRequirementCount();
                         if (amount < quest.getRequirements().size()) {
-                            txt += Translator.translate(amount != 1, "hqm.questBook.reqOnly", amount);
+                            txt += Translator.translate(amount != 1, "modernhardcorequesting.questBook.reqOnly", amount);
                         } else if (amount > quest.getRequirements().size()) {
-                            txt += Translator.translate(amount != 1, "hqm.questBook.reqMore", amount);
+                            txt += Translator.translate(amount != 1, "modernhardcorequesting.questBook.reqMore", amount);
                         } else {
-                            txt += Translator.translate(amount != 1, "hqm.questBook.reqAll", amount);
+                            txt += Translator.translate(amount != 1, "modernhardcorequesting.questBook.reqAll", amount);
                         }
 
                     }
@@ -529,10 +529,10 @@ public class QuestSet {
 
                 if (enabled || editing) {
                     if (quest.isCompleted(player)) {
-                        txt += "\n" + GuiColor.GREEN + Translator.translate("hqm.questBook.completed");
+                        txt += "\n" + GuiColor.GREEN + Translator.translate("modernhardcorequesting.questBook.completed");
                     }
                     if (quest.hasReward(player)) {
-                        txt += "\n" + GuiColor.PURPLE + Translator.translate("hqm.questBook.unclaimedReward");
+                        txt += "\n" + GuiColor.PURPLE + Translator.translate("modernhardcorequesting.questBook.unclaimedReward");
                     }
 
                     String repeatMessage = enabled ? quest.getRepeatInfo().getMessage(quest, player) : quest.getRepeatInfo().getShortMessage();
@@ -551,20 +551,20 @@ public class QuestSet {
                         }
 
                         if (totalTasks == 0) {
-                            txt += "\n" + GuiColor.RED + Translator.translate("hqm.questBook.noTasks");
+                            txt += "\n" + GuiColor.RED + Translator.translate("modernhardcorequesting.questBook.noTasks");
                         } else {
-                            txt += "\n" + GuiColor.CYAN + Translator.translate("hqm.questBook.completedTasks", completedTasks, totalTasks);
+                            txt += "\n" + GuiColor.CYAN + Translator.translate("modernhardcorequesting.questBook.completedTasks", completedTasks, totalTasks);
 
                             if (Keyboard.isKeyDown(Keyboard.KEY_T)) {
-                                txt += " [" + Translator.translate("hqm.questBook.holding", "T") + "]";
+                                txt += " [" + Translator.translate("modernhardcorequesting.questBook.holding", "T") + "]";
                                 for (QuestTask task : quest.getTasks()) {
                                     txt += "\n" + GuiColor.CYAN + task.getDescription();
                                     if (task.isCompleted(player)) {
-                                        txt += GuiColor.WHITE + " [" + Translator.translate("hqm.questBook.completed") + "]";
+                                        txt += GuiColor.WHITE + " [" + Translator.translate("modernhardcorequesting.questBook.completed") + "]";
                                     }
                                 }
                             } else {
-                                txt += " [" + Translator.translate("hqm.questBook.holding", "T") + "]";
+                                txt += " [" + Translator.translate("modernhardcorequesting.questBook.holding", "T") + "]";
                             }
                         }
 
@@ -587,30 +587,30 @@ public class QuestSet {
 
                                 switch (quest.getTriggerType()) {
                                     case ANTI_TRIGGER:
-                                        invisibilityMessage = Translator.translate("hqm.questBook.invisLocked");
+                                        invisibilityMessage = Translator.translate("modernhardcorequesting.questBook.invisLocked");
                                         break;
                                     case QUEST_TRIGGER:
-                                        invisibilityMessage = Translator.translate("hqm.questBook.invisPerm");
+                                        invisibilityMessage = Translator.translate("modernhardcorequesting.questBook.invisPerm");
                                         parentInvisible = false;
                                         break;
                                     case TASK_TRIGGER:
-                                        invisibilityMessage = Translator.translate(quest.getTriggerTasks() != 1, "hqm.questBook.invisCount", quest.getTriggerTasks());
+                                        invisibilityMessage = Translator.translate(quest.getTriggerTasks() != 1, "modernhardcorequesting.questBook.invisCount", quest.getTriggerTasks());
                                         break;
                                     default:
                                         invisibilityMessage = null;
                                 }
 
                                 if (parentInvisible) {
-                                    String parentText = Translator.translate("hqm.questBook.invisInherit");
+                                    String parentText = Translator.translate("modernhardcorequesting.questBook.invisInherit");
                                     if (invisibilityMessage == null) {
                                         invisibilityMessage = parentText;
                                     } else {
-                                        invisibilityMessage = parentText + " " + Translator.translate("hqm.questBook.and") + " " + invisibilityMessage;
+                                        invisibilityMessage = parentText + " " + Translator.translate("modernhardcorequesting.questBook.and") + " " + invisibilityMessage;
                                     }
                                 }
 
                             } else {
-                                invisibilityMessage = Translator.translate("hqm.questBook.invisOption");
+                                invisibilityMessage = Translator.translate("modernhardcorequesting.questBook.invisOption");
                             }
 
                             if (invisibilityMessage != null) {
@@ -631,10 +631,10 @@ public class QuestSet {
                         }
                         int optionLinks = ids.size();
                         if (optionLinks > 0) {
-                            txt += "\n" + GuiColor.BLUE + Translator.translate(optionLinks != 1, "hqm.questBook.optionLinks", optionLinks);
+                            txt += "\n" + GuiColor.BLUE + Translator.translate(optionLinks != 1, "modernhardcorequesting.questBook.optionLinks", optionLinks);
 
                             if (Keyboard.isKeyDown(Keyboard.KEY_O)) {
-                                txt += " [" + Translator.translate("hqm.questBook.holding", "O") + "]";
+                                txt += " [" + Translator.translate("modernhardcorequesting.questBook.holding", "O") + "]";
                                 for (String id : ids) {
                                     Quest option = Quest.getQuest(id);
                                     txt += "\n" + GuiColor.BLUE + option.getName();
@@ -643,7 +643,7 @@ public class QuestSet {
                                     }
                                 }
                             } else {
-                                txt += " [" + Translator.translate("hqm.questBook.hold", "O") + "]";
+                                txt += " [" + Translator.translate("modernhardcorequesting.questBook.hold", "O") + "]";
                             }
                         }
 
@@ -660,15 +660,15 @@ public class QuestSet {
                     }
 
                     if (childCount > 0) {
-                        txt += "\n" + GuiColor.PINK + Translator.translate(childCount != 1, "hqm.questBook.childUnlocks", childCount);
+                        txt += "\n" + GuiColor.PINK + Translator.translate(childCount != 1, "modernhardcorequesting.questBook.childUnlocks", childCount);
                         if (editing) {
                             if (Keyboard.isKeyDown(Keyboard.KEY_U)) {
-                                txt += " [" + Translator.translate("hqm.questBook.holding", "U") + "]";
+                                txt += " [" + Translator.translate("modernhardcorequesting.questBook.holding", "U") + "]";
                                 for (Quest child : externalQuests) {
                                     txt += "\n" + GuiColor.PINK + child.getName() + " (" + child.getQuestSet().getName() + ")";
                                 }
                             } else {
-                                txt += " [" + Translator.translate("hqm.questBook.hold", "U") + "]";
+                                txt += " [" + Translator.translate("modernhardcorequesting.questBook.hold", "U") + "]";
                             }
                         }
                     }
@@ -677,14 +677,14 @@ public class QuestSet {
                 }
 
                 if (editing) {
-                    txt += "\n\n" + GuiColor.GRAY + Translator.translate("hqm.questBook.ctrlNonEditor");
+                    txt += "\n\n" + GuiColor.GRAY + Translator.translate("modernhardcorequesting.questBook.ctrlNonEditor");
                 }
 
                 if (gui.isOpBook && GuiScreen.isShiftKeyDown()) {
                     if (quest.isCompleted(player)) {
-                        txt += "\n\n" + GuiColor.RED + Translator.translate("hqm.questBook.resetQuest");
+                        txt += "\n\n" + GuiColor.RED + Translator.translate("modernhardcorequesting.questBook.resetQuest");
                     } else {
-                        txt += "\n\n" + GuiColor.ORANGE + Translator.translate("hqm.questBook.completeQuest");
+                        txt += "\n\n" + GuiColor.ORANGE + Translator.translate("modernhardcorequesting.questBook.completeQuest");
                     }
                 }
 

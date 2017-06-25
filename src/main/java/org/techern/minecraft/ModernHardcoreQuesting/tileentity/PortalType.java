@@ -16,11 +16,11 @@ public enum PortalType {
     }
 
     public String getName() {
-        return Translator.translate("hqm.portal." + this.id + ".title");
+        return Translator.translate("modernhardcorequesting.portal." + this.id + ".title");
     }
 
     public String getDescription() {
-        return Translator.translate("hqm.portal." + this.id + ".desc");
+        return Translator.translate("modernhardcorequesting.portal." + this.id + ".desc");
     }
 
     public boolean isPreset() {

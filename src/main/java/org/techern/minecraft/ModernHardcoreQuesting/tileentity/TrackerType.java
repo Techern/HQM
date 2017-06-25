@@ -124,11 +124,11 @@ public enum TrackerType {
     }
 
     public String getName() {
-        return Translator.translate("hqm.tracker." + id + ".title");
+        return Translator.translate("modernhardcorequesting.tracker." + id + ".title");
     }
 
     public String getDescription() {
-        return Translator.translate("hqm.tracker." + id + ".desc");
+        return Translator.translate("modernhardcorequesting.tracker." + id + ".desc");
     }
 
     public abstract int getMeta(TileEntityTracker tracker, Quest quest, int radius);

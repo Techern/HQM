@@ -23,7 +23,7 @@ public class GuiEditMenuRepeat extends GuiEditMenuExtended {
         days = quest.getRepeatInfo().getDays();
         hours = quest.getRepeatInfo().getHours();
 
-        textBoxes.add(new TextBoxHidden(gui, 0, "hqm.repeatMenu.days") {
+        textBoxes.add(new TextBoxHidden(gui, 0, "modernhardcorequesting.repeatMenu.days") {
             @Override
             protected int getValue() {
                 return days;
@@ -35,12 +35,12 @@ public class GuiEditMenuRepeat extends GuiEditMenuExtended {
             }
         });
 
-        textBoxes.add(new TextBoxHidden(gui, 1, "hqm.repeatMenu.hours") {
+        textBoxes.add(new TextBoxHidden(gui, 1, "modernhardcorequesting.repeatMenu.hours") {
             @Override
             protected void draw(GuiBase gui, boolean selected) {
                 super.draw(gui, selected);
 
-                gui.drawString(gui.getLinesFromText(Translator.translate("hqm.repeatMenu.mcDaysHours"), 0.7F, 150), BOX_X, BOX_Y + BOX_OFFSET * 2 + TEXT_OFFSET, 0.7F, 0x404040);
+                gui.drawString(gui.getLinesFromText(Translator.translate("modernhardcorequesting.repeatMenu.mcDaysHours"), 0.7F, 150), BOX_X, BOX_Y + BOX_OFFSET * 2 + TEXT_OFFSET, 0.7F, 0x404040);
             }
 
             @Override

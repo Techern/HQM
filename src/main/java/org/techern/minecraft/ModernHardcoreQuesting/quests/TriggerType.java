@@ -55,11 +55,11 @@ public enum TriggerType {
     }
 
     public String getName() {
-        return Translator.translate("hqm.trigger." + id + ".title");
+        return Translator.translate("modernhardcorequesting.trigger." + id + ".title");
     }
 
     public String getDescription() {
-        return Translator.translate("hqm.trigger." + id + ".desc");
+        return Translator.translate("modernhardcorequesting.trigger." + id + ".desc");
     }
 
     public boolean isUseTaskCount() {

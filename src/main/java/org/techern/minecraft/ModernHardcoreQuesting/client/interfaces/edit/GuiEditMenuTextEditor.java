@@ -43,7 +43,7 @@ public class GuiEditMenuTextEditor extends GuiEditMenu {
         super(gui, player, false);
         this.text = new TextBoxLogic(gui, txt, 140, true);
         this.isName = isName;
-        buttons.add(new LargeButton("hqm.textEditor.copyAll", 185, 20) {
+        buttons.add(new LargeButton("modernhardcorequesting.textEditor.copyAll", 185, 20) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;
@@ -60,7 +60,7 @@ public class GuiEditMenuTextEditor extends GuiEditMenu {
             }
         });
 
-        buttons.add(new LargeButton("hqm.textEditor.paste", 245, 20) {
+        buttons.add(new LargeButton("modernhardcorequesting.textEditor.paste", 245, 20) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;
@@ -77,7 +77,7 @@ public class GuiEditMenuTextEditor extends GuiEditMenu {
             }
         });
 
-        buttons.add(new LargeButton("hqm.textEditor.clear", 185, 40) {
+        buttons.add(new LargeButton("modernhardcorequesting.textEditor.clear", 185, 40) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;
@@ -94,7 +94,7 @@ public class GuiEditMenuTextEditor extends GuiEditMenu {
             }
         });
 
-        buttons.add(new LargeButton("hqm.textEditor.clearPaste", 245, 40) {
+        buttons.add(new LargeButton("modernhardcorequesting.textEditor.clearPaste", 245, 40) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;
@@ -184,7 +184,7 @@ public class GuiEditMenuTextEditor extends GuiEditMenu {
     public void save(GuiBase gui) {
         String str = text.getText();
         if (str == null || str.isEmpty()) {
-            str = Translator.translate("hqm.textEditor.unnamed");
+            str = Translator.translate("modernhardcorequesting.textEditor.unnamed");
         }
 
         if (quest != null) {

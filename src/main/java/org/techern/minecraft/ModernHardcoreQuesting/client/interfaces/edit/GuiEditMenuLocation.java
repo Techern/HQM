@@ -24,7 +24,7 @@ public class GuiEditMenuLocation extends GuiEditMenuExtended {
         this.player = player;
 
 
-        textBoxes.add(new TextBoxNumberNegative(gui, 0, "hqm.locationMenu.xTarget") {
+        textBoxes.add(new TextBoxNumberNegative(gui, 0, "modernhardcorequesting.locationMenu.xTarget") {
             @Override
             protected void setValue(int number) {
                 location.setX(number);
@@ -36,7 +36,7 @@ public class GuiEditMenuLocation extends GuiEditMenuExtended {
             }
         });
 
-        textBoxes.add(new TextBoxNumberNegative(gui, 1, "hqm.locationMenu.yTarget") {
+        textBoxes.add(new TextBoxNumberNegative(gui, 1, "modernhardcorequesting.locationMenu.yTarget") {
             @Override
             protected void setValue(int number) {
                 location.setY(number);
@@ -48,7 +48,7 @@ public class GuiEditMenuLocation extends GuiEditMenuExtended {
             }
         });
 
-        textBoxes.add(new TextBoxNumberNegative(gui, 2, "hqm.locationMenu.zTarget") {
+        textBoxes.add(new TextBoxNumberNegative(gui, 2, "modernhardcorequesting.locationMenu.zTarget") {
             @Override
             protected void setValue(int number) {
                 location.setZ(number);
@@ -61,7 +61,7 @@ public class GuiEditMenuLocation extends GuiEditMenuExtended {
         });
 
 
-        textBoxes.add(new TextBoxNumberNegative(gui, 3, "hqm.locationMenu.dim") {
+        textBoxes.add(new TextBoxNumberNegative(gui, 3, "modernhardcorequesting.locationMenu.dim") {
             @Override
             protected void setValue(int number) {
                 location.setDimension(number);
@@ -73,7 +73,7 @@ public class GuiEditMenuLocation extends GuiEditMenuExtended {
             }
         });
 
-        textBoxes.add(new TextBoxNumberNegative(gui, 4, "hqm.locationMenu.radius") {
+        textBoxes.add(new TextBoxNumberNegative(gui, 4, "modernhardcorequesting.locationMenu.radius") {
             @Override
             protected int getValue() {
                 return location.getRadius();
@@ -88,12 +88,12 @@ public class GuiEditMenuLocation extends GuiEditMenuExtended {
             protected void draw(GuiBase gui, boolean selected) {
                 super.draw(gui, selected);
 
-                gui.drawString(gui.getLinesFromText(Translator.translate("hqm.locationMenu.negRadius"), 0.7F, 130), BOX_X, BOX_Y + BOX_OFFSET * 5 + TEXT_OFFSET, 0.7F, 0x404040);
+                gui.drawString(gui.getLinesFromText(Translator.translate("modernhardcorequesting.locationMenu.negRadius"), 0.7F, 130), BOX_X, BOX_Y + BOX_OFFSET * 5 + TEXT_OFFSET, 0.7F, 0x404040);
             }
         });
 
 
-        buttons.add(new LargeButton("hqm.locationMenu.location", 100, 20) {
+        buttons.add(new LargeButton("modernhardcorequesting.locationMenu.location", 100, 20) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;

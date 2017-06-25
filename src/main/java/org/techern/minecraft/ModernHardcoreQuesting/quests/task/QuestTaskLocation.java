@@ -135,7 +135,7 @@ public class QuestTaskLocation extends QuestTask {
             gui.drawString(location.name, x + X_TEXT_OFFSET, y + Y_TEXT_OFFSET, 0x404040);
 
             if (visited(i, player)) {
-                gui.drawString(GuiColor.GREEN + Translator.translate("hqm.locationMenu.visited"), x + X_TEXT_OFFSET + X_TEXT_INDENT, y + Y_TEXT_OFFSET + 9, 0.7F, 0x404040);
+                gui.drawString(GuiColor.GREEN + Translator.translate("modernhardcorequesting.locationMenu.visited"), x + X_TEXT_OFFSET + X_TEXT_INDENT, y + Y_TEXT_OFFSET + 9, 0.7F, 0x404040);
             } else if (location.visible.doShowCoordinate()) {
                 if (location.radius >= 0) {
                     gui.drawString("(" + location.x + ", " + location.y + ", " + location.z + ")", x + X_TEXT_OFFSET + X_TEXT_INDENT, y + Y_TEXT_OFFSET + 9, 0.7F, 0x404040);
@@ -145,15 +145,15 @@ public class QuestTaskLocation extends QuestTask {
                     if (location.radius >= 0) {
                         String str;
                         int distance = (int) player.getDistance(location.x + 0.5, location.y + 0.5, location.z + 0.5);
-                        str = Translator.translate("hqm.locationMenu.mAway", distance);
+                        str = Translator.translate("modernhardcorequesting.locationMenu.mAway", distance);
                         if (location.visible.doShowRadius()) {
-                            str += " [" + Translator.translate("hqm.locationMenu.mRadius", location.radius) + "]";
+                            str += " [" + Translator.translate("modernhardcorequesting.locationMenu.mRadius", location.radius) + "]";
                         }
                         gui.drawString(str, x + X_TEXT_OFFSET + X_TEXT_INDENT, y + Y_TEXT_OFFSET + 15, 0.7F, 0x404040);
                     }
 
                 } else {
-                    gui.drawString(Translator.translate("hqm.locationMenu.wrongDim"), x + X_TEXT_OFFSET + X_TEXT_INDENT, y + Y_TEXT_OFFSET + (location.radius >= 0 ? 15 : 9), 0.7F, 0x404040);
+                    gui.drawString(Translator.translate("modernhardcorequesting.locationMenu.wrongDim"), x + X_TEXT_OFFSET + X_TEXT_INDENT, y + Y_TEXT_OFFSET + (location.radius >= 0 ? 15 : 9), 0.7F, 0x404040);
                 }
 
             }
@@ -295,11 +295,11 @@ public class QuestTaskLocation extends QuestTask {
         }
 
         public String getName() {
-            return Translator.translate("hqm.locationMenu.vis" + id + ".title");
+            return Translator.translate("modernhardcorequesting.locationMenu.vis" + id + ".title");
         }
 
         public String getDescription() {
-            return Translator.translate("hqm.locationMenu.vis" + id + ".desc");
+            return Translator.translate("modernhardcorequesting.locationMenu.vis" + id + ".desc");
         }
     }
 

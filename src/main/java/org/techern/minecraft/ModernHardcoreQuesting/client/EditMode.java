@@ -40,10 +40,10 @@ public enum EditMode {
     }
 
     public String getName() {
-        return Translator.translate("hqm.editMode." + id + ".title");
+        return Translator.translate("modernhardcorequesting.editMode." + id + ".title");
     }
 
     public String getDescription() {
-        return Translator.translate("hqm.editMode." + id + ".desc");
+        return Translator.translate("modernhardcorequesting.editMode." + id + ".desc");
     }
 }

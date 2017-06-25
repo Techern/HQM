@@ -14,10 +14,10 @@ public class CommandEnable extends CommandBase {
     public void handleCommand(ICommandSender sender, String[] arguments) {
         QuestingData.disableVanillaHardcore(sender);
         if (sender.getServer().getEntityWorld().getWorldInfo().isHardcoreModeEnabled())
-            sendChat(sender, "hqm.message.vanillaHardcoreOn");
+            sendChat(sender, "modernhardcorequesting.message.vanillaHardcoreOn");
         else
-            sendChat(sender, QuestingData.isHardcoreActive() ? "hqm.message.hardcoreAlreadyActivated" : "hqm.message.questHardcore");
-        sendChat(sender, QuestingData.isQuestActive() ? "hqm.message.questAlreadyActivated" : "hqm.message.questActivated");
+            sendChat(sender, QuestingData.isHardcoreActive() ? "modernhardcorequesting.message.hardcoreAlreadyActivated" : "modernhardcorequesting.message.questHardcore");
+        sendChat(sender, QuestingData.isQuestActive() ? "modernhardcorequesting.message.questAlreadyActivated" : "modernhardcorequesting.message.questActivated");
         QuestingData.activateHardcore();
         QuestingData.activateQuest(true);
         if (QuestingData.isHardcoreActive() && sender instanceof EntityPlayer)

@@ -43,7 +43,7 @@ public class CommandLives extends CommandBase {
     @Override
     public void handleCommand(ICommandSender sender, String[] arguments) throws CommandException {
         if (!QuestingData.isHardcoreActive()) {
-            sendChat(sender, "hqm.message.noHardcoreYet");
+            sendChat(sender, "modernhardcorequesting.message.noHardcoreYet");
             return;
         }
         int amount;
@@ -70,11 +70,11 @@ public class CommandLives extends CommandBase {
                 try {
                     amount = Integer.parseInt(arguments[1]);
                     if (amount < 0)
-                        throw new WrongUsageException("hqm.message.positiveNumbers");
+                        throw new WrongUsageException("modernhardcorequesting.message.positiveNumbers");
                     if (sender instanceof EntityPlayer)
                         removeLives((EntityPlayer) sender, amount);
                 } catch (Exception e) {
-                    throw new WrongUsageException("hqm.message.posNumberAndPlayer");
+                    throw new WrongUsageException("modernhardcorequesting.message.posNumberAndPlayer");
                 }
             }
             // remove playername
@@ -82,7 +82,7 @@ public class CommandLives extends CommandBase {
                 try {
                     removeLivesFrom(sender, arguments[1], 1);
                 } catch (Exception e) {
-                    throw new WrongUsageException("hqm.message.posNumberAndPlayer");
+                    throw new WrongUsageException("modernhardcorequesting.message.posNumberAndPlayer");
                 }
             }
             //add amount own
@@ -90,11 +90,11 @@ public class CommandLives extends CommandBase {
                 try {
                     amount = Integer.parseInt(arguments[1]);
                     if (amount < 0)
-                        throw new WrongUsageException("hqm.message.positiveNumbers");
+                        throw new WrongUsageException("modernhardcorequesting.message.positiveNumbers");
                     if (sender instanceof EntityPlayer)
                         addLives((EntityPlayer) sender, amount);
                 } catch (Exception e) {
-                    throw new WrongUsageException("hqm.message.positiveNumbers");
+                    throw new WrongUsageException("modernhardcorequesting.message.positiveNumbers");
                 }
             }
             //add amount playername
@@ -102,7 +102,7 @@ public class CommandLives extends CommandBase {
                 try {
                     addLivesTo(sender, arguments[1], 1);
                 } catch (Exception e) {
-                    throw new WrongUsageException("hqm.message.posNumberAndPlayer");
+                    throw new WrongUsageException("modernhardcorequesting.message.posNumberAndPlayer");
                 }
             }
         } else if (arguments.length == 3) {
@@ -111,10 +111,10 @@ public class CommandLives extends CommandBase {
                 try {
                     amount = Integer.parseInt(arguments[2]);
                     if (amount < 0)
-                        throw new WrongUsageException("hqm.message.positiveNumbers");
+                        throw new WrongUsageException("modernhardcorequesting.message.positiveNumbers");
                     removeLivesFrom(sender, arguments[1], amount);
                 } catch (Exception e) {
-                    throw new WrongUsageException("hqm.message.posNumberAndPlayer");
+                    throw new WrongUsageException("modernhardcorequesting.message.posNumberAndPlayer");
                 }
             }
             // /hqm lives add playername amount
@@ -122,10 +122,10 @@ public class CommandLives extends CommandBase {
                 try {
                     amount = Integer.parseInt(arguments[2]);
                     if (amount < 0)
-                        throw new WrongUsageException("hqm.message.positiveNumbers");
+                        throw new WrongUsageException("modernhardcorequesting.message.positiveNumbers");
                     addLivesTo(sender, arguments[1], amount);
                 } catch (Exception e) {
-                    throw new WrongUsageException("hqm.message.posNumberAndPlayer");
+                    throw new WrongUsageException("modernhardcorequesting.message.posNumberAndPlayer");
                 }
             }
         }
@@ -134,10 +134,10 @@ public class CommandLives extends CommandBase {
     private void removeLives(EntityPlayer player, int amount) {
         if (QuestingData.getQuestingData(player).getLives() - amount < QuestingData.getQuestingData(player).getLivesToStayAlive()) {
             int lives = QuestingData.getQuestingData(player).getLives();
-            sendChat(player, lives != 1, "hqm.message.cantRemoveLives", lives);
+            sendChat(player, lives != 1, "modernhardcorequesting.message.cantRemoveLives", lives);
         } else {
             QuestingData.getQuestingData(player).removeLives(player, amount);
-            sendChat(player, amount != 1, "hqm.message.removeLives", amount);
+            sendChat(player, amount != 1, "modernhardcorequesting.message.removeLives", amount);
             currentLives(player);
         }
     }
@@ -147,19 +147,19 @@ public class CommandLives extends CommandBase {
 
         QuestingData.getQuestingData(player).removeLives((EntityPlayerMP) sender, amount);
 
-        sendChat(sender, amount != 1, "hqm.message.removeLivesFrom", amount, playerName);
-        sendChat(player, amount != 1, "hqm.message.removeLivesBy", amount, sender.getName());
+        sendChat(sender, amount != 1, "modernhardcorequesting.message.removeLivesFrom", amount, playerName);
+        sendChat(player, amount != 1, "modernhardcorequesting.message.removeLivesBy", amount, sender.getName());
         currentLives(player);
     }
 
     private void addLives(EntityPlayer player, int amount) {
         if (QuestingData.getQuestingData(player).getRawLives() + amount <= ModConfig.MAXLIVES) {
             QuestingData.getQuestingData(player).addLives(player, amount);
-            sendChat(player, amount != 1, "hqm.message.addLives", amount);
+            sendChat(player, amount != 1, "modernhardcorequesting.message.addLives", amount);
             currentLives(player);
         } else {
             QuestingData.getQuestingData(player).addLives(player, amount);
-            sendChat(player, ModConfig.MAXLIVES != 1, "hqm.message.cantAddLives", ModConfig.MAXLIVES);
+            sendChat(player, ModConfig.MAXLIVES != 1, "modernhardcorequesting.message.cantAddLives", ModConfig.MAXLIVES);
             currentLives(player);
         }
     }
@@ -169,14 +169,14 @@ public class CommandLives extends CommandBase {
 
         if (QuestingData.getQuestingData(player).getRawLives() + amount <= ModConfig.MAXLIVES) {
             QuestingData.getQuestingData(player).addLives(player, amount);
-            sendChat(sender, amount != 1, "hqm.message.addLivesTo", amount, playerName);
-            sendChat(player, amount != 1, "hqm.message.addLivesBy", amount, sender.getName());
+            sendChat(sender, amount != 1, "modernhardcorequesting.message.addLivesTo", amount, playerName);
+            sendChat(player, amount != 1, "modernhardcorequesting.message.addLivesBy", amount, sender.getName());
             currentLives(player);
         } else {
             QuestingData.getQuestingData(player).addLives(player, amount);
-            sendChat(sender, "hqm.message.cantGiveMoreLives", playerName, ModConfig.MAXLIVES);
-            sendChat(sender, "hqm.massage.setLivesInstead", player, ModConfig.MAXLIVES);
-            sendChat(player, "hqm.massage.setLivesBy", ModConfig.MAXLIVES, sender.getName());
+            sendChat(sender, "modernhardcorequesting.message.cantGiveMoreLives", playerName, ModConfig.MAXLIVES);
+            sendChat(sender, "modernhardcorequesting.massage.setLivesInstead", player, ModConfig.MAXLIVES);
+            sendChat(player, "modernhardcorequesting.massage.setLivesBy", ModConfig.MAXLIVES, sender.getName());
             currentLives(player);
         }
     }
@@ -185,9 +185,9 @@ public class CommandLives extends CommandBase {
         EntityPlayer player = FMLCommonHandler.instance().getMinecraftServerInstance().getPlayerList().getPlayerByUsername(playerName);
         if (player != null) {
             int lives = QuestingData.getQuestingData(player).getLives();
-            sendChat(sender, lives != 1, "hqm.message.hasLivesRemaining", playerName, lives);
+            sendChat(sender, lives != 1, "modernhardcorequesting.message.hasLivesRemaining", playerName, lives);
         } else {
-            throw new CommandException("hqm.message.noPlayer");
+            throw new CommandException("modernhardcorequesting.message.noPlayer");
         }
     }
 

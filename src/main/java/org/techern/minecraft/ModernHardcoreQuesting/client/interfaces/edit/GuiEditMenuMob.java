@@ -45,7 +45,7 @@ public class GuiEditMenuMob extends GuiEditMenuExtended {
             }
         };
 
-        textBoxes.add(new TextBoxNumber(gui, 0, "hqm.mobTask.reqKills") {
+        textBoxes.add(new TextBoxNumber(gui, 0, "modernhardcorequesting.mobTask.reqKills") {
             @Override
             protected int getValue() {
                 return mob.getCount();
@@ -106,8 +106,8 @@ public class GuiEditMenuMob extends GuiEditMenuExtended {
             gui.drawString(mobs.get(i), START_X, START_Y + OFFSET_Y * (i - start), 0.7F, selected ? inBounds ? 0xC0C0C0 : 0xA0A0A0 : inBounds ? 0x707070 : 0x404040);
         }
 
-        gui.drawString(Translator.translate("hqm.mobTask.search"), 180, 20, 0x404040);
-        gui.drawString(Translator.translate("hqm.mobTask." + (mob.getMob() == null ? "nothing" : "currently") + "Selected"), 180, 40, 0x404040);
+        gui.drawString(Translator.translate("modernhardcorequesting.mobTask.search"), 180, 20, 0x404040);
+        gui.drawString(Translator.translate("modernhardcorequesting.mobTask." + (mob.getMob() == null ? "nothing" : "currently") + "Selected"), 180, 40, 0x404040);
         if (mob.getMob() != null) {
             gui.drawString(mob.getMob(), 180, 50, 0.7F, 0x404040);
         }
@@ -148,12 +148,12 @@ public class GuiEditMenuMob extends GuiEditMenuExtended {
 
     @Override
     protected String getArrowText() {
-        return Translator.translate("hqm.mobTask." + (mob.isExact() ? "exact" : "type") + "Match.title");
+        return Translator.translate("modernhardcorequesting.mobTask." + (mob.isExact() ? "exact" : "type") + "Match.title");
     }
 
     @Override
     protected String getArrowDescription() {
-        return Translator.translate("hqm.mobTask." + (mob.isExact() ? "exact" : "type") + "Match.desc");
+        return Translator.translate("modernhardcorequesting.mobTask." + (mob.isExact() ? "exact" : "type") + "Match.desc");
     }
 
     @Override

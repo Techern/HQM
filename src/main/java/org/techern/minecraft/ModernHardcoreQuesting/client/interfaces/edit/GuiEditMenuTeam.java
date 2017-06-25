@@ -44,7 +44,7 @@ public class GuiEditMenuTeam extends GuiEditMenu {
     public GuiEditMenuTeam(GuiQuestBook gui, EntityPlayer player) {
         super(gui, player);
 
-        buttons.add(new LargeButton("hqm.party.create", 250, 20) {
+        buttons.add(new LargeButton("modernhardcorequesting.party.create", 250, 20) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return teamName.getText().length() > 0;
@@ -61,7 +61,7 @@ public class GuiEditMenuTeam extends GuiEditMenu {
             }
         });
 
-        buttons.add(inviteButton = new LargeButton("hqm.party.invitePlayer", 250, 20) {
+        buttons.add(inviteButton = new LargeButton("modernhardcorequesting.party.invitePlayer", 250, 20) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return inviteName.getText().length() > 0;
@@ -78,7 +78,7 @@ public class GuiEditMenuTeam extends GuiEditMenu {
             }
         });
 
-        buttons.add(new LargeButton("hqm.party.accept", 180, 20) {
+        buttons.add(new LargeButton("modernhardcorequesting.party.accept", 180, 20) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;
@@ -96,7 +96,7 @@ public class GuiEditMenuTeam extends GuiEditMenu {
             }
         });
 
-        buttons.add(new LargeButton("hqm.party.decline", 240, 20) {
+        buttons.add(new LargeButton("modernhardcorequesting.party.decline", 240, 20) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;
@@ -114,7 +114,7 @@ public class GuiEditMenuTeam extends GuiEditMenu {
             }
         });
 
-        buttons.add(new LargeButton("hqm.party.decideLater", 180, 40) {
+        buttons.add(new LargeButton("modernhardcorequesting.party.decideLater", 180, 40) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;
@@ -150,11 +150,11 @@ public class GuiEditMenuTeam extends GuiEditMenu {
 
             @Override
             protected String getName() {
-                return Translator.translate(selectedEntry.isInTeam() ? "hqm.party.kickPlayer" : "hqm.party.removeInvite");
+                return Translator.translate(selectedEntry.isInTeam() ? "modernhardcorequesting.party.kickPlayer" : "modernhardcorequesting.party.removeInvite");
             }
         });
 
-        buttons.add(new LargeButton("hqm.party.leave", 250, 160) {
+        buttons.add(new LargeButton("modernhardcorequesting.party.leave", 250, 160) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return GuiScreen.isShiftKeyDown();
@@ -171,7 +171,7 @@ public class GuiEditMenuTeam extends GuiEditMenu {
             }
         });
 
-        buttons.add(new LargeButton("hqm.party.disband", 250, 160) {
+        buttons.add(new LargeButton("modernhardcorequesting.party.disband", 250, 160) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return GuiScreen.isShiftKeyDown() && GuiScreen.isCtrlKeyDown();
@@ -190,7 +190,7 @@ public class GuiEditMenuTeam extends GuiEditMenu {
         });
 
 
-        buttons.add(new LargeButton("hqm.party.list", 250, 190) {
+        buttons.add(new LargeButton("modernhardcorequesting.party.list", 250, 190) {
             @Override
             public boolean isEnabled(GuiBase gui, EntityPlayer player) {
                 return true;
@@ -281,7 +281,7 @@ public class GuiEditMenuTeam extends GuiEditMenu {
         if (team.isSingle() && inviteTeam == null) {
             int inviteCount = team.getInvites() == null ? 0 : team.getInvites().size();
             if (inviteCount > 0) {
-                gui.drawString(Translator.translate("hqm.party.invites"), TITLE_X, TITLE_Y, 0x404040);
+                gui.drawString(Translator.translate("modernhardcorequesting.party.invites"), TITLE_X, TITLE_Y, 0x404040);
                 List<Team> invites = team.getInvites();
                 int start = inviteScroll.isVisible(gui) ? Math.round((team.getInvites().size() - VISIBLE_INVITES) * inviteScroll.getScroll()) : 0;
                 int end = Math.min(invites.size(), start + VISIBLE_INVITES);
@@ -290,10 +290,10 @@ public class GuiEditMenuTeam extends GuiEditMenu {
                     gui.drawString(invite.getName(), PLAYER_X, PLAYER_Y + PLAYER_SPACING * (i - start), 0x404040);
                 }
             } else {
-                gui.drawString(Translator.translate("hqm.party.noInvites"), TITLE_X, TITLE_Y, 0x404040);
+                gui.drawString(Translator.translate("modernhardcorequesting.party.noInvites"), TITLE_X, TITLE_Y, 0x404040);
             }
 
-            gui.drawString(Translator.translate("hqm.party.name"), 180, 20, 0.7F, 0x404040);
+            gui.drawString(Translator.translate("modernhardcorequesting.party.name"), 180, 20, 0.7F, 0x404040);
         } else {
             boolean isOwner = inviteTeam == null && entry.isOwner();
             String title = (inviteTeam == null ? team : inviteTeam).getName();
@@ -306,10 +306,10 @@ public class GuiEditMenuTeam extends GuiEditMenu {
                 String str = player.getDisplayName();
 
                 if (player.isOwner()) {
-                    str += GuiColor.ORANGE + " [" + Translator.translate("hqm.party.owner") + "]";
+                    str += GuiColor.ORANGE + " [" + Translator.translate("modernhardcorequesting.party.owner") + "]";
                 } else if (!player.isInTeam()) {
                     if (isOwner) {
-                        str += GuiColor.LIGHT_GRAY + " [" + Translator.translate("hqm.party.invite") + "]";
+                        str += GuiColor.LIGHT_GRAY + " [" + Translator.translate("modernhardcorequesting.party.invite") + "]";
                     } else {
                         continue;
                     }
@@ -334,21 +334,21 @@ public class GuiEditMenuTeam extends GuiEditMenu {
 
             if (inviteTeam == null) {
                 if (entry.isOwner()) {
-                    gui.drawString(Translator.translate("hqm.party.playerName"), 180, 20, 0.7F, 0x404040);
+                    gui.drawString(Translator.translate("modernhardcorequesting.party.playerName"), 180, 20, 0.7F, 0x404040);
 
                     if (selectedEntry != null) {
-                        gui.drawString(gui.getLinesFromText(Translator.translate("hqm.party.currentSelection", selectedEntry.getDisplayName()), 0.7F, 70), 177, 52, 0.7F, 0x404040);
+                        gui.drawString(gui.getLinesFromText(Translator.translate("modernhardcorequesting.party.currentSelection", selectedEntry.getDisplayName()), 0.7F, 70), 177, 52, 0.7F, 0x404040);
 
                         if (selectedEntry.isOwner()) {
-                            gui.drawString(gui.getLinesFromText(Translator.translate("hqm.party.shiftCtrlConfirm"), 0.6F, 70), 177, 162, 0.6F, GuiColor.RED.getHexColor());
+                            gui.drawString(gui.getLinesFromText(Translator.translate("modernhardcorequesting.party.shiftCtrlConfirm"), 0.6F, 70), 177, 162, 0.6F, GuiColor.RED.getHexColor());
                         }
                     }
 
                 } else {
-                    gui.drawString(gui.getLinesFromText(Translator.translate("hqm.party.shiftConfirm"), 0.7F, 70), 177, 162, 0.7F, GuiColor.RED.getHexColor());
+                    gui.drawString(gui.getLinesFromText(Translator.translate("modernhardcorequesting.party.shiftConfirm"), 0.7F, 70), 177, 162, 0.7F, GuiColor.RED.getHexColor());
                 }
             }
-            gui.drawString(gui.getLinesFromText(Translator.translate("hqm.party.stats"), 0.7F, 70), 177, 192, 0.7F, 0x404040);
+            gui.drawString(gui.getLinesFromText(Translator.translate("modernhardcorequesting.party.stats"), 0.7F, 70), 177, 192, 0.7F, 0x404040);
 
             Team infoTeam = inviteTeam == null ? team : inviteTeam;
 
@@ -361,8 +361,8 @@ public class GuiEditMenuTeam extends GuiEditMenu {
             gui.drawRect(INFO_BOX_X, infoY, INFO_BOX_SRC_X, INFO_BOX_SRC_Y, INFO_BOX_SIZE, INFO_BOX_SIZE);
             gui.drawRect(INFO_BOX_X, infoY + REWARD_SETTING_Y, INFO_BOX_SRC_X, INFO_BOX_SRC_Y, INFO_BOX_SIZE, INFO_BOX_SIZE);
 
-            gui.drawString(Translator.translate("hqm.party.lifeSetting", infoTeam.getLifeSetting().getTitle()), INFO_BOX_X + INFO_BOX_TEXT_OFFSET_X, infoY + INFO_BOX_TEXT_OFFSET_Y, 0.7F, 0x404040);
-            gui.drawString(Translator.translate("hqm.party.rewardSetting", infoTeam.getRewardSetting().getTitle()), INFO_BOX_X + INFO_BOX_TEXT_OFFSET_X, infoY + REWARD_SETTING_Y + INFO_BOX_TEXT_OFFSET_Y, 0.7F, 0x404040);
+            gui.drawString(Translator.translate("modernhardcorequesting.party.lifeSetting", infoTeam.getLifeSetting().getTitle()), INFO_BOX_X + INFO_BOX_TEXT_OFFSET_X, infoY + INFO_BOX_TEXT_OFFSET_Y, 0.7F, 0x404040);
+            gui.drawString(Translator.translate("modernhardcorequesting.party.rewardSetting", infoTeam.getRewardSetting().getTitle()), INFO_BOX_X + INFO_BOX_TEXT_OFFSET_X, infoY + REWARD_SETTING_Y + INFO_BOX_TEXT_OFFSET_Y, 0.7F, 0x404040);
 
         }
 
@@ -381,9 +381,9 @@ public class GuiEditMenuTeam extends GuiEditMenu {
             int infoY = getInfoY();
             Team infoTeam = inviteTeam == null ? team : inviteTeam;
             if (gui.inBounds(INFO_BOX_X, infoY, INFO_BOX_SIZE, INFO_BOX_SIZE, mX, mY)) {
-                gui.drawMouseOver(gui.getLinesFromText(GuiColor.GREEN + infoTeam.getLifeSetting().getTitle() + "\n" + infoTeam.getLifeSetting().getDescription() + (isOwner ? "\n\n" + GuiColor.ORANGE + Translator.translate("hqm.party.change") : ""), 1F, 200), gui.getLeft() + mX, gui.getTop() + mY);
+                gui.drawMouseOver(gui.getLinesFromText(GuiColor.GREEN + infoTeam.getLifeSetting().getTitle() + "\n" + infoTeam.getLifeSetting().getDescription() + (isOwner ? "\n\n" + GuiColor.ORANGE + Translator.translate("modernhardcorequesting.party.change") : ""), 1F, 200), gui.getLeft() + mX, gui.getTop() + mY);
             } else if (gui.inBounds(INFO_BOX_X, infoY + REWARD_SETTING_Y, INFO_BOX_SIZE, INFO_BOX_SIZE, mX, mY)) {
-                gui.drawMouseOver(gui.getLinesFromText(GuiColor.GREEN + infoTeam.getRewardSetting().getTitle() + "\n" + infoTeam.getRewardSetting().getDescription() + (isOwner ? "\n\n" + GuiColor.ORANGE + Translator.translate("hqm.party.change") : ""), 1F, 200), gui.getLeft() + mX, gui.getTop() + mY);
+                gui.drawMouseOver(gui.getLinesFromText(GuiColor.GREEN + infoTeam.getRewardSetting().getTitle() + "\n" + infoTeam.getRewardSetting().getDescription() + (isOwner ? "\n\n" + GuiColor.ORANGE + Translator.translate("modernhardcorequesting.party.change") : ""), 1F, 200), gui.getLeft() + mX, gui.getTop() + mY);
             }
         }
 

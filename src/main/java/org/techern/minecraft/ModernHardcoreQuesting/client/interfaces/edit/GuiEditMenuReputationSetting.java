@@ -59,7 +59,7 @@ public class GuiEditMenuReputationSetting extends GuiEditMenuExtended {
             }
         }
 
-        checkboxes.add(new CheckBox("hqm.repSetting.invRange", 21, 124) {
+        checkboxes.add(new CheckBox("modernhardcorequesting.repSetting.invRange", 21, 124) {
             @Override
             protected boolean isVisible() {
                 return reputation != null;
@@ -85,17 +85,17 @@ public class GuiEditMenuReputationSetting extends GuiEditMenuExtended {
 
             String info = null;
 
-            gui.drawString(Translator.translate("hqm.repSetting.lower"), BARS_X, LOWER_Y, 0x404040);
+            gui.drawString(Translator.translate("modernhardcorequesting.repSetting.lower"), BARS_X, LOWER_Y, 0x404040);
             gui.applyColor(0xFFFFFFFF);
             ResourceHelper.bindResource(GuiQuestBook.MAP_TEXTURE);
             info = reputation.draw((GuiQuestBook) gui, BARS_X, LOWER_Y + BAR_OFFSET_Y, mX, mY, info, player, false, null, null, false, lower, lower == null ? "" : "Selected: " + lower.getLabel(), false);
 
-            gui.drawString(Translator.translate("hqm.repSetting.upper"), BARS_X, UPPER_Y, 0x404040);
+            gui.drawString(Translator.translate("modernhardcorequesting.repSetting.upper"), BARS_X, UPPER_Y, 0x404040);
             gui.applyColor(0xFFFFFFFF);
             ResourceHelper.bindResource(GuiQuestBook.MAP_TEXTURE);
             info = reputation.draw((GuiQuestBook) gui, BARS_X, UPPER_Y + BAR_OFFSET_Y, mX, mY, info, player, false, null, null, false, upper, upper == null ? "" : "Selected: " + upper.getLabel(), false);
 
-            gui.drawString(Translator.translate("hqm.repSetting.preview"), BARS_X, RESULT_Y, 0x404040);
+            gui.drawString(Translator.translate("modernhardcorequesting.repSetting.preview"), BARS_X, RESULT_Y, 0x404040);
             gui.applyColor(0xFFFFFFFF);
             ResourceHelper.bindResource(GuiQuestBook.MAP_TEXTURE);
             info = reputation.draw((GuiQuestBook) gui, BARS_X, RESULT_Y + BAR_OFFSET_Y, mX, mY, info, player, true, lower, upper, inverted, null, null, false);
@@ -150,16 +150,16 @@ public class GuiEditMenuReputationSetting extends GuiEditMenuExtended {
     @Override
     protected String getArrowText() {
         if (Reputation.getReputations().isEmpty()) {
-            return Translator.translate("hqm.repSetting.invalid");
+            return Translator.translate("modernhardcorequesting.repSetting.invalid");
         } else {
-            return reputation != null ? reputation.getName() : Translator.translate("hqm.repSetting.invalid");
+            return reputation != null ? reputation.getName() : Translator.translate("modernhardcorequesting.repSetting.invalid");
         }
     }
 
     @Override
     protected String getArrowDescription() {
         if (Reputation.getReputations().isEmpty()) {
-            return Translator.translate("hqm.repReward.noValidReps");
+            return Translator.translate("modernhardcorequesting.repReward.noValidReps");
         } else {
             return null;
         }

@@ -223,9 +223,9 @@ public abstract class QuestTaskItems extends QuestTask {
                     str += "\n" + GuiColor.GRAY + item.getPrecision().getName();
                 if (gui.isOpBook && GuiScreen.isShiftKeyDown()) {
                     if (getProgress(player, i) == item.required) {
-                        str += "\n\n" + GuiColor.RED + Translator.translate("hqm.questBook.resetTask");
+                        str += "\n\n" + GuiColor.RED + Translator.translate("modernhardcorequesting.questBook.resetTask");
                     } else {
-                        str += "\n\n" + GuiColor.ORANGE + Translator.translate("hqm.questBook.completeTask");
+                        str += "\n\n" + GuiColor.ORANGE + Translator.translate("modernhardcorequesting.questBook.completeTask");
                     }
                 }
                 gui.drawMouseOver(str, mX + gui.getLeft(), mY + gui.getTop());

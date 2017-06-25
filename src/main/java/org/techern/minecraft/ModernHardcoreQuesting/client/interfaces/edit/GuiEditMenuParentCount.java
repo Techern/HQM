@@ -24,7 +24,7 @@ public class GuiEditMenuParentCount extends GuiEditMenuExtended {
         }
 
 
-        textBoxes.add(new TextBoxNumber(gui, 0, "hqm.parentCount.count") {
+        textBoxes.add(new TextBoxNumber(gui, 0, "modernhardcorequesting.parentCount.count") {
             @Override
             protected int getValue() {
                 return parentRequirementCount;
@@ -49,12 +49,12 @@ public class GuiEditMenuParentCount extends GuiEditMenuExtended {
 
     @Override
     protected String getArrowText() {
-        return Translator.translate("hqm.parentCount.req" + (useModifiedParentRequirement ? "Count" : "All") + ".title");
+        return Translator.translate("modernhardcorequesting.parentCount.req" + (useModifiedParentRequirement ? "Count" : "All") + ".title");
     }
 
     @Override
     protected String getArrowDescription() {
-        return Translator.translate("hqm.parentCount.req" + (useModifiedParentRequirement ? "Count" : "All") + ".desc");
+        return Translator.translate("modernhardcorequesting.parentCount.req" + (useModifiedParentRequirement ? "Count" : "All") + ".desc");
     }
 
     @Override

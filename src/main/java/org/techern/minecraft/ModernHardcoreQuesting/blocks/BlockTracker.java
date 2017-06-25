@@ -42,13 +42,13 @@ public class BlockTracker extends BlockContainer {
                     TileEntity tile = world.getTileEntity(pos);
                     if (tile != null && tile instanceof TileEntityTracker) {
                         if (!Quest.isEditing) {
-                            player.sendMessage(Translator.translateToIChatComponent("tile.hqm:quest_tracker.offLimit"));
+                            player.sendMessage(Translator.translateToIChatComponent("tile.modernhardcorequesting:quest_tracker.offLimit"));
                         } else {
                             ((TileEntityTracker) tile).setCurrentQuest();
                             if (((TileEntityTracker) tile).getCurrentQuest() != null) {
-                                player.sendMessage(Translator.translateToIChatComponent("tile.hqm:quest_tracker.bindTo", ((TileEntityTracker) tile).getCurrentQuest().getName()));
+                                player.sendMessage(Translator.translateToIChatComponent("tile.modernhardcorequesting:quest_tracker.bindTo", ((TileEntityTracker) tile).getCurrentQuest().getName()));
                             } else {
-                                player.sendMessage(Translator.translateToIChatComponent("hqm.message.noTaskSelected"));
+                                player.sendMessage(Translator.translateToIChatComponent("modernhardcorequesting.message.noTaskSelected"));
                             }
                         }
 
@@ -60,7 +60,7 @@ public class BlockTracker extends BlockContainer {
                     TileEntity tile = world.getTileEntity(pos);
                     if (tile != null && tile instanceof TileEntityTracker) {
                         if (!Quest.isEditing) {
-                            player.sendMessage(Translator.translateToIChatComponent("tile.hqm:quest_tracker.offLimit"));
+                            player.sendMessage(Translator.translateToIChatComponent("tile.modernhardcorequesting:quest_tracker.offLimit"));
                         } else {
                             ((TileEntityTracker) tile).openInterface(player);
                         }

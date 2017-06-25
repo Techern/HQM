@@ -23,7 +23,7 @@ public enum BagTier {
     }
 
     public String getName() {
-        return Translator.translate("hqm.bag." + this.name().toLowerCase());
+        return Translator.translate("modernhardcorequesting.bag." + this.name().toLowerCase());
     }
 
     @Override
