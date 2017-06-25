@@ -1,0 +1,611 @@
+# ======================================
+#		 TRANSLATE GUIDELINES
+# ======================================
+# %s is where something will be filled in at runtime.
+# Don't remove it since it will make things weird.
+# Just put it on the correct place in the sentence.
+# To use the % use %% to escape the formatter.
+
+# ======================================
+#				GENERAL
+# ======================================
+itemGroup.hqm=Quête de noyau dur
+modernhardcorequesting.message.noHardcore=Ce serveur n'a pas Quête de noyau dur d'activé.
+modernhardcorequesting.message.hardcore=Ce serveur permet actuellement Quête de noyau dur !
+modernhardcorequesting.message.livesLeft=Il vous reste actuellement %s vie(s).
+modernhardcorequesting.message.lostLife=Vous venez de perdre une vie. Il vous reste %s vie(s) 
+modernhardcorequesting.message.lostTeamLife=%s vient de perdre une vie %s. Il vous reste %s vie(s) 
+modernhardcorequesting.message.andBanned=et a été banni
+modernhardcorequesting.message.gameOver=Vous n'avez plus de vies. Game over, man, ce jeu est terminé !
+modernhardcorequesting.message.vanillaHardcore=Hardcore mode don't work together with vanilla hardcore mode. Will try to disable it...
+modernhardcorequesting.message.vanillaHardcoreOn=Vanilla hardcore mode is already enabled. Can't enable Hardcore Mode.
+modernhardcorequesting.message.vanillaHardcoreOverride=Vanilla hardcore mode has now been disabled. Please reopen your world for the change to take full effect.
+modernhardcorequesting.message.noPlayer=That player does not exist.
+modernhardcorequesting.message.questActivated=Questing mode has been activated. Enjoy!
+modernhardcorequesting.message.questHardcore=Hardcore Mode has been activated. Enjoy!
+modernhardcorequesting.message.questAlreadyActivated=Questing mode is already activated.
+modernhardcorequesting.message.hardcoreAlreadyActivated=Hardcore Mode is already activated
+modernhardcorequesting.message.noQuestYet=Questing Mode isn't enabled yet. use '/hqm quest' to enable it.
+modernhardcorequesting.message.noHardcoreYet=Hardcore Mode isn't enabled yet. use '/hqm hardcore' to enable it.
+modernhardcorequesting.message.positiveNumbers=Please use only positive numbers.
+modernhardcorequesting.message.posNumberAndPlayer=Please use only positive numbers and / or a correct Playername.
+modernhardcorequesting.message.cantRemoveLives=You currently have %s live(s) remaining, you can't remove that much lives.
+modernhardcorequesting.message.removeLives=You have removed %s live(s) from your lifepool.
+modernhardcorequesting.message.removeLivesFrom=You have removed %s  live(s) from %s.
+modernhardcorequesting.message.removeLivesBy=You had %s live(s) removed by %s
+modernhardcorequesting.message.cantAddLives=You can't have more than %s lives.
+modernhardcorequesting.message.addLives=You have added %s live(s) to your lifepool.
+modernhardcorequesting.message.addLivesTo=You have added %s  live(s) to %s.
+modernhardcorequesting.message.addLivesBy=You had %s live(s) added by %s
+modernhardcorequesting.message.cantGiveMoreLives=You can't give %s more than %s lives.
+modernhardcorequesting.message.haveMaxLives=You already have maximum lives.
+modernhardcorequesting.massage.setLivesInstead=Setting %s to %s lives instead.
+modernhardcorequesting.massage.setLivesBy=You have got your lives set to %s by %s
+modernhardcorequesting.message.haveRemaining=Vous avez %s restant
+modernhardcorequesting.message.hasLivesRemaining=%s a %s vie(s) restantes
+modernhardcorequesting.message.version=Quête de noyau dur - Version : %s
+modernhardcorequesting.message.addOne=Vous avez ajouté 1 à votre total de vie.
+modernhardcorequesting.message.eatRottenHearth=Pourquoi avez-vous mangé un coeur pourri ?
+modernhardcorequesting.message.hearthDecay=One or more of your hearts has just decade into a Rotten Heart.
+modernhardcorequesting.message.alreadyEditing=Un autre OP accède déjà aux quêtes de ce joueur.
+modernhardcorequesting.message.bookNoPermission=Vous n'avez pas la permission de toucher à ce livre.
+modernhardcorequesting.message.noTaskSelected=Vous n'avez pas encore sélectionné de tache.
+
+# ======================================
+#				BLOCKS
+# ======================================
+tile.modernhardcorequesting:item_barrel.name=Système d'administration des quêtes
+tile.modernhardcorequesting:item_barrel.nonBound=Vous n'avez pas lié de quêtes au SAQ actuellement
+tile.modernhardcorequesting:item_barrel.boundTo=Le SAQ est actuellement lié à '%s'
+tile.modernhardcorequesting:item_barrel.bindTo=Vous avez lié '%s' au SAQ
+tile.modernhardcorequesting:quest_tracker.name=Système de suivi de quêtes
+tile.modernhardcorequesting:quest_tracker.offLimit=Vous n'êtes pas en mode édition. Ce bloc est hors limites.
+tile.modernhardcorequesting:quest_portal_0.name=Système portail des quêtes
+tile.modernhardcorequesting:quest_portal_0.bindTo=Vous avez lié '%s' au SPQ
+tile.modernhardcorequesting:quest_portal_1.name=Mur solide
+tile.modernhardcorequesting:quest_portal_2.name=Bords magiques
+
+# ======================================
+#				ITEMS
+# ======================================
+item.modernhardcorequesting:quest_book_0.name=Livre de quêtes
+item.modernhardcorequesting:quest_book_1.name=Livre de quêtes - Version OP
+item.modernhardcorequesting:quest_book_1.useAs=Utilisez le livre comme : %s
+item.modernhardcorequesting:quest_book_1.invalid=Livre invalide !
+item.modernhardcorequesting:hearts_quarterheart.name=Quart de coeur
+item.modernhardcorequesting:hearts_halfheart.name=Demi coeur
+item.modernhardcorequesting:hearts_threequarts.name=Trois quart de coeur
+item.modernhardcorequesting:hearts_heart.name=Coeur entier
+item.modernhardcorequesting:hearts_heart.tooltip=Consommez-le pour recevoir une vie supplémentaire
+item.modernhardcorequesting:hearts_heart.freshness=Fraicheur actuelle : %s %%
+item.modernhardcorequesting:hearts_rottenheart.name=Coeur pourri
+item.modernhardcorequesting:hearts_rottenheart.tooltip=Coeur pourri. Ne pas avaler
+item.modernhardcorequesting:bags.name=Sac de récompense
+item.modernhardcorequesting:hqm_invalid_item.name=Élément non valide
+
+# ======================================
+#			    QUESTS
+# ======================================
+modernhardcorequesting.quest.claim=Réclamer la récompense
+modernhardcorequesting.quest.manualSubmit=Envoi manuel
+modernhardcorequesting.quest.manualDetect=Détection manuelle
+modernhardcorequesting.quest.requirement=Prérequis
+modernhardcorequesting.quest.selectTask=Choisir une tache
+modernhardcorequesting.quest.rewards=Récompenses
+modernhardcorequesting.quest.pickOne=Piochez un
+modernhardcorequesting.quest.pickOneReward=Piochez une récompense
+modernhardcorequesting.quest.itemTaskChangeTo=Click on the item task type you want to change to.
+modernhardcorequesting.quest.itemTaskTypeOnly=You can only change the type of item tasks.
+modernhardcorequesting.quest.itemTaskTypeChange=Select an item task you want to change the type of.
+modernhardcorequesting.quest.createTasks=Create tasks of different types by using the buttons below
+modernhardcorequesting.quest.partyRepReward=The party will receive this reputation when the first member claims their reward.
+modernhardcorequesting.quest.partyRepRewardClaimed=The party has already received this reputation.
+modernhardcorequesting.quest.crtlNonEditor=Hold Ctrl to see this as a non-editor.
+modernhardcorequesting.quest.selected=Sélectionné
+
+# ======================================
+#				BAGS
+# ======================================
+modernhardcorequesting.bag.basic=De base
+modernhardcorequesting.bag.good=Bon
+modernhardcorequesting.bag.greater=Meilleur
+modernhardcorequesting.bag.epic=Epique
+modernhardcorequesting.bag.legendary=Légendaire
+modernhardcorequesting.bag.group=%s Group
+modernhardcorequesting.bag.unknown=Inconnu
+
+# ======================================
+#			TEAM SETTINGS
+# ======================================
+modernhardcorequesting.team.sharedLives.title=Vies partagées
+modernhardcorequesting.team.sharedLives.desc=Tout le monde met sa vie dans pot commun. Si quelqu'un meurt une vie est enlevée du pot. Tout le monde a besoin d'au moins une vie à être gardé dans le jeu, donc si votre mort aboutit à vider le pot commun de vies, vous êtes banni. Les autres peuvent continuer à jouer.
+modernhardcorequesting.team.individualLives.title=Vies individuelles
+modernhardcorequesting.team.individualLives.desc=Tout le monde conserve sa propre vie. Si vous êtes à court de vies, vous êtes hors du jeu. Les autres joueurs dans le parti peuvent continuer à jouer avec leurs vies.
+modernhardcorequesting.team.allReward.title=Récompenses multiples
+modernhardcorequesting.team.allReward.desc=Tout le monde dans la partie peut revendiquer leurs récompenses d'une quête. Cette option donne plus de récompenses que les autres mais peut être mis hors de service dans la config.
+modernhardcorequesting.team.anyReward.title=Récompenses partégées
+modernhardcorequesting.team.anyReward.desc=La parti reçoit un ensemble de récompenses en achevant une quête. N'importe qui peut revendiquer la récompense mais aussitôt qu'elle est revendiqué plus personne ne peut le faire.
+modernhardcorequesting.team.randomReward.title=Récompenses aléatoires
+modernhardcorequesting.team.randomReward.desc=Chaque fois que la partie complète uen quête cette ensemble de récompenses est assigné à un joueur. Ce joueur est le seul qui puisse revendiquer les récompenses.
+modernhardcorequesting.team.invalidPlayer.title=Erreur d'invite
+modernhardcorequesting.team.invalidPlayer.desc=The username does not match a player on this server. The players you invite must have logged on at least once before.
+modernhardcorequesting.team.playerInParty.title=Erreur d'invite
+modernhardcorequesting.team.playerInParty.desc=Ce joueur est déjà dans une partie, vous ne pouvez pas inviter de joueurs d'autres parties.
+modernhardcorequesting.team.usedTeamName.title=Erreur de groupe
+modernhardcorequesting.team.usedTeamName.desc=Ce nom de partie est déjà utilisé par quelqu'un d'autre.
+
+# ======================================
+#			TASK TYPES
+# ======================================
+modernhardcorequesting.taskType.consume.title=Consume task
+modernhardcorequesting.taskType.consume.desc=A task where the player can hand in items or fluids. One can also use the Quest Delivery System to submit items and fluids.
+modernhardcorequesting.taskType.craft.title=Crafting task
+modernhardcorequesting.taskType.craft.desc=A task where the player has to craft specific items.
+modernhardcorequesting.taskType.location.title=Location task
+modernhardcorequesting.taskType.location.desc=A task where the player has to reach one or more locations.
+modernhardcorequesting.taskType.consumeQDS.title=QDS task
+modernhardcorequesting.taskType.consumeQDS.desc=A task where the player can hand in items or fluids. This is a normal consume task where manual submit has been disabled to teach the player about the QDS
+modernhardcorequesting.taskType.detect.title=Detection task
+modernhardcorequesting.taskType.detect.desc=A task where the player needs specific items. These do not have to be handed in, having them in one's inventory is enough.
+modernhardcorequesting.taskType.kill.title=Killing task
+modernhardcorequesting.taskType.kill.desc=A task where the player has to kill certain monsters.
+modernhardcorequesting.taskType.death.title=Death task
+modernhardcorequesting.taskType.death.desc=A task where the player has to die a certain amount of times.
+modernhardcorequesting.taskType.reputation.title=Reputation task
+modernhardcorequesting.taskType.reputation.desc=A task where the player has to reach a certain reputation.
+modernhardcorequesting.taskType.reputationKill.title=Rep kill task
+modernhardcorequesting.taskType.reputationKill.desc=A task where the player has to kill other players with certain reputations.
+
+# ======================================
+#			DEATH TYPES
+# ======================================
+modernhardcorequesting.deathType.lava=Lave
+modernhardcorequesting.deathType.fire=Feu
+modernhardcorequesting.deathType.suffocation=Suffocation
+modernhardcorequesting.deathType.thorns=Épines
+modernhardcorequesting.deathType.drowning=Noyade
+modernhardcorequesting.deathType.starvation=Famine
+modernhardcorequesting.deathType.fall=Chute
+modernhardcorequesting.deathType.void=Néant
+modernhardcorequesting.deathType.crushed=Broyé
+modernhardcorequesting.deathType.explosions=Explosions
+modernhardcorequesting.deathType.monsters=Monstres
+modernhardcorequesting.deathType.otherPlayers=Autres joueurs
+modernhardcorequesting.deathType.magic=Magique
+modernhardcorequesting.deathType.rottenHearts=Coeur pourri
+modernhardcorequesting.deathType.other=Autre / Inconnue
+
+# ======================================
+#			DEATH STATS
+# ======================================
+modernhardcorequesting.deathStat.first=1er
+modernhardcorequesting.deathStat.second=2ème
+modernhardcorequesting.deathStat.third=3ème
+modernhardcorequesting.deathStat.worstPlayers=Les pires joueurs
+modernhardcorequesting.deathStat.everyone=Tout le monde
+modernhardcorequesting.deathStat.noOneDied=Personne n'est mort ainsi, pourtant.
+modernhardcorequesting.deathStat.payer=joueur
+modernhardcorequesting.deathStat.payers=joueurs
+modernhardcorequesting.deathStat.diedThisWay=sont mort ainsi.
+
+# ======================================
+#			TRACKER TYPES
+# ======================================
+modernhardcorequesting.tracker.team.title=Team Tracker
+modernhardcorequesting.tracker.team.desc=Emits a redstone signal depending on how many teams that have completed the selected quest. Players without teams count as separate one person teams.
+modernhardcorequesting.tracker.player.title=Player Tracker
+modernhardcorequesting.tracker.player.desc=Emits a redstone signal depending on how many players that have completed this quest.
+modernhardcorequesting.tracker.progressMax.title=Progress Tracker (Max)
+modernhardcorequesting.tracker.progressMax.desc=Emits a redstone signal depending on the progress of this quest for the player/team that has the highest progress. This will only emit at full strength if someone has completed the quest.
+modernhardcorequesting.tracker.progressClose.title=Progress Tracker (Close)
+modernhardcorequesting.tracker.progressClose.desc=Emits a redstone signal depending on the progress of the nearest player. This will only emit at full strength if that player has completed the quest. This mode requires the players to be online, no matter the radius setting.
+
+# ======================================
+#			PORTAL TYPES
+# ======================================
+modernhardcorequesting.portal.tech.title=Thème technique
+modernhardcorequesting.portal.tech.desc=Cet ensemble fonctionera parfaitement pour votre carte à thème technique.
+modernhardcorequesting.portal.magic.title=Thème magique
+modernhardcorequesting.portal.magic.desc=Cet ensemble fonctionera parfaitement pour votre carte à thème magique.
+modernhardcorequesting.portal.custom.title=Thème personalisé
+modernhardcorequesting.portal.custom.desc=Personalisez le thème en spécifiant, à quel bloc, ce bloc devrat-il ressembler.
+
+# ======================================
+#				ITEM PRECISION
+# ======================================
+modernhardcorequesting.precision.precise=Precise detection
+modernhardcorequesting.precision.nbtFuzzy=NBT independent detection
+modernhardcorequesting.precision.fuzzy=Fuzzy detection
+modernhardcorequesting.precision.oreDict=Ore dictionary detection
+
+# ======================================
+#			REPEAT TYPES
+# ======================================
+modernhardcorequesting.repeat.none.title=Non répétable
+modernhardcorequesting.repeat.none.desc=Cette quête est non répétable and can therefore only be completed once.
+modernhardcorequesting.repeat.instant.title=Instant repeat
+modernhardcorequesting.repeat.instant.desc=As soon as this quest is completed it can be completed again for another set of rewards
+modernhardcorequesting.repeat.instant.message=Instant Cooldown
+modernhardcorequesting.repeat.interval.title=Interval repeat
+modernhardcorequesting.repeat.interval.desc=At a specific interval this quest will be reset and available for completion again. The quest is only reset if it has already been completed.
+modernhardcorequesting.repeat.interval.message=Refreshes on interval
+modernhardcorequesting.repeat.time.title=Cooldown repeat
+modernhardcorequesting.repeat.time.desc=After completing this quest it goes on a cooldown, when this cooldown ends you can complete the quest again.
+modernhardcorequesting.repeat.time.message=Cooldown on completion
+modernhardcorequesting.repeat.invalid=Temps non valide
+modernhardcorequesting.repeat.resetIn=Mis à zéro dans %s
+modernhardcorequesting.repeat.day=jour
+modernhardcorequesting.repeat.days=jours
+modernhardcorequesting.repeat.and=et
+modernhardcorequesting.repeat.hour=heure
+modernhardcorequesting.repeat.hours=heures
+modernhardcorequesting.repeat.repeatable=Quête répétable
+
+# ======================================
+#			EDIT MODES
+# ======================================
+modernhardcorequesting.editMode.normal.title=Curseur
+modernhardcorequesting.editMode.normal.desc=Utilisez le livre comme si vous étiez en mode jeu.
+modernhardcorequesting.editMode.move.title=Déplacer
+modernhardcorequesting.editMode.move.desc=Cliquez et glissez-déposez les quêtes
+modernhardcorequesting.editMode.create.title=Créer
+modernhardcorequesting.editMode.create.desc=Cliquez pour créer une quête, un groupe de quêtes, un groupe de récompense, et plein d'autres choses.
+modernhardcorequesting.editMode.req.title=Quest Requirements
+modernhardcorequesting.editMode.req.desc=Click on a quest to select it and then click on the quests you want as requirements for the selected quest.\n\nHold shift and click on the selected quest to remove its requirements.
+modernhardcorequesting.editMode.size.title=Change Size
+modernhardcorequesting.editMode.size.desc=Click on a quest to change its size, this is purely visual and has no impact on how the quest works.
+modernhardcorequesting.editMode.rename.title=Edit Text
+modernhardcorequesting.editMode.rename.desc=Click on the text you want to edit. Works with names and descriptions for quest sets, quests, tasks, main lore, reward groups and reward tiers.
+modernhardcorequesting.editMode.item.title=Change Item
+modernhardcorequesting.editMode.item.desc=Click on an item or item slot to open the item selector. This works for quest rewards and task items to give some examples.
+modernhardcorequesting.editMode.task.title=Create Task
+modernhardcorequesting.editMode.task.desc=Opens up the task creation menu.
+modernhardcorequesting.editMode.delete.title=Delete
+modernhardcorequesting.editMode.delete.desc=Be careful with this one, things you click on will be deleted. Works with quest sets, quests, tasks, rewards, task items and just about everything.
+modernhardcorequesting.editMode.swap.title=Change Set
+modernhardcorequesting.editMode.swap.desc=Click on a quest to move it to another set. Before using this you will have to use the "Target Set" command to select a target set.
+modernhardcorequesting.editMode.swapSelect.title=Target Set
+modernhardcorequesting.editMode.swapSelect.desc=Mark a set as the target for quest movement. The "Change Set" command can then be used to move quests to this set
+modernhardcorequesting.editMode.tier.title=Set group tier
+modernhardcorequesting.editMode.tier.desc=Selected a group and then click on a tier to set the group's tier.
+modernhardcorequesting.editMode.bag.title=Reward Bags
+modernhardcorequesting.editMode.bag.desc=Open up the reward bag menu. Here you will be able to modify the group tiers and add groups of items for the reward bags.
+modernhardcorequesting.editMode.location.title=Edit Location
+modernhardcorequesting.editMode.location.desc=Edit the target location for location tasks.
+modernhardcorequesting.editMode.repeatable.title=Set Repeatability
+modernhardcorequesting.editMode.repeatable.desc=Change if a quest should be repeatable or not, and if so, the properties of the repeatability.
+modernhardcorequesting.editMode.trigger.title=Trigger Quests
+modernhardcorequesting.editMode.trigger.desc=Specify any properties for trigger quests.
+modernhardcorequesting.editMode.mob.title=Edit Monster
+modernhardcorequesting.editMode.mob.desc=Edit the monster target for killing tasks.
+modernhardcorequesting.editMode.questSelection.title=Select Quest
+modernhardcorequesting.editMode.questSelection.desc=Mark a quest as the selected quest. When a quest is selected you can bind it to a Quest Tracker System or a Quest Gate System by right clicking it with a book.
+modernhardcorequesting.editMode.questOption.title=Quest Option
+modernhardcorequesting.editMode.questOption.desc=Click on a quest to select it and then click on the quests you want to link it to. If an option linked quest is completed all quests it's linked to becomes invisible and uncompletable.\n\n Hold shift and click on the selected quest to remove all its links.
+modernhardcorequesting.editMode.changeTask.title=Change Task
+modernhardcorequesting.editMode.changeTask.desc=Change the task type of item tasks.
+modernhardcorequesting.editMode.reqParents.title=Required parents
+modernhardcorequesting.editMode.reqParents.desc=Change how many of the parent quests that have to be completed before this one unlocks.
+modernhardcorequesting.editMode.rep.title=Reputation
+modernhardcorequesting.editMode.rep.desc=Open the reputation menu where you can create reputations and their tiers.
+modernhardcorequesting.editMode.repValue.title=Change value
+modernhardcorequesting.editMode.repValue.desc=Change the value of the different reputation tiers
+modernhardcorequesting.editMode.repTask.title=Edit reputation target
+modernhardcorequesting.editMode.repTask.desc=Change the configurations for a reputation target for the selected reputation task
+modernhardcorequesting.editMode.repReward.title=Edit reputation reward
+modernhardcorequesting.editMode.repReward.desc=Click on the reputation reward icon to bring up the reputation reward menu.
+
+# ======================================
+#				COMMAND
+# ======================================
+modernhardcorequesting.command.notFound=Commande introuvable
+modernhardcorequesting.command.noPermission=Vous n'avez pas la permission d'utiliser cette commande
+modernhardcorequesting.command.loadFailed=Échec de chargement
+modernhardcorequesting.command.loadSuccess=Chargé : %s
+modernhardcorequesting.command.fileNotFound=Fichier introuvable
+modernhardcorequesting.command.saveFailed=Échec d'enregistrement de %s
+modernhardcorequesting.command.savedTo=Quêtes enregistrées dans : %s
+modernhardcorequesting.command.questNotFound=La page de quête %s est introuvable
+
+modernhardcorequesting.command.info.help.start=Les commandes disponibles sont :
+modernhardcorequesting.command.help.syntax0=/hqm help <commande>
+modernhardcorequesting.command.help.info0=Pour de l'aide sur toutes les commandes disponibles.
+modernhardcorequesting.command.version.syntax0=/hqm version
+modernhardcorequesting.command.version.info0=Donne la version du mod.
+modernhardcorequesting.command.hardcore.syntax0=/hqm hardcore
+modernhardcorequesting.command.hardcore.info0=Active le mode difficile.
+modernhardcorequesting.command.quest.syntax0=/hqm quest
+modernhardcorequesting.command.quest.info0=Active le mode de quêtes.
+modernhardcorequesting.command.enable.syntax0=/hqm enable
+modernhardcorequesting.command.enable.info0=Active les modes difficile et de quêtes.
+modernhardcorequesting.command.edit.syntax0=/hqm edit <joueur>
+modernhardcorequesting.command.edit.info0=Vous donne un livre en mode édition, par défaut à : user.
+modernhardcorequesting.command.lives.syntax0=/hqm lives
+modernhardcorequesting.command.lives.info0=Verifie vos vies restantes.
+modernhardcorequesting.command.lives.syntax1=/hqm lives [joueur]
+modernhardcorequesting.command.lives.info1=Vérifie les vies restantes d'un joueur.
+modernhardcorequesting.command.lives.syntax2=/hqm lives add <joueur> <quantité>
+modernhardcorequesting.command.lives.info2=Ajoute des vies à un joueur, par défaut à : user et 1
+modernhardcorequesting.command.lives.syntax3=/hqm lives remove <joueur> <quantité>
+modernhardcorequesting.command.lives.info3=Retire des vies à un joueur, par défaut à : user et 1
+modernhardcorequesting.command.load.syntax0=/hqm load [non de fichier]
+modernhardcorequesting.command.load.info0=Charge les pages de quêtes données dans modernhardcorequesting.
+modernhardcorequesting.command.load.syntax1=/hqm load all
+modernhardcorequesting.command.load.info1=Charge toutes les pages de quêtes dans le modernhardcorequesting.
+modernhardcorequesting.command.save.syntax2=/hqm load bags
+modernhardcorequesting.command.save.info2=Charge les sacs de quête et les niveaux d'un JSON - les groupes de récompenses déjà existants ne seront pas chargés.
+modernhardcorequesting.command.save.syntax0=/hqm save [page de quête] <non de fichier>
+modernhardcorequesting.command.save.info0=Enregistre la page de quête donnée dans un fichier JSON, par défaut à : page name
+modernhardcorequesting.command.save.syntax1=/hqm save all
+modernhardcorequesting.command.save.info1=Enregistre toutes les pages de quêtes par leurs noms
+modernhardcorequesting.command.save.syntax2=/hqm save bags
+modernhardcorequesting.command.save.info2=Enregistre toutes les récompenses de sac de quête dans un JSON.
+
+# ======================================
+#				REWARD GUI
+# ======================================
+modernhardcorequesting.rewardGui.chance=%s%% chance to get this reward
+modernhardcorequesting.rewardGui.tierReward=%s Reward
+modernhardcorequesting.rewardGui.close=Click to close
+modernhardcorequesting.rewardGui.shiftInfo=Hold shift for more info
+
+# ======================================
+#			EDIT MENU
+# ======================================
+modernhardcorequesting.edit.ok=Ok
+modernhardcorequesting.edit.cancel=Annuler
+
+# ======================================
+#			DEATH MENU
+# ======================================
+modernhardcorequesting.deathMenu.showWorst=Show Worst
+modernhardcorequesting.deathMenu.showTotal=Show Total
+modernhardcorequesting.deathMenu.total=Total Deaths: %s
+modernhardcorequesting.deathMenu.lots=lots
+modernhardcorequesting.deathMenu.deaths=You've died %s time(s).
+modernhardcorequesting.deathMenu.deathsOutOf=You've died %s of %s time(s).
+
+# ======================================
+#			DEATH TASK
+# ======================================
+modernhardcorequesting.deathTask.reqDeathCount=Required death count
+
+# ======================================
+#			MOB TASK
+# ======================================
+modernhardcorequesting.mobTask.reqKills=Required kill count
+modernhardcorequesting.mobTask.search=Search
+modernhardcorequesting.mobTask.nothingSelected=Nothing Selected
+modernhardcorequesting.mobTask.currentlySelected=Currently Selected
+modernhardcorequesting.mobTask.exactMatch.title=Exact Match
+modernhardcorequesting.mobTask.typeMatch.title=Type Match
+modernhardcorequesting.mobTask.exactMatch.desc=Only matching monsters with the selected type, subtypes are not counted towards the killing count.
+modernhardcorequesting.mobTask.typeMatch.desc=Matching every monster that has the selected type or a subtype to the selected type.
+modernhardcorequesting.mobTask.allKilled=All killed
+modernhardcorequesting.mobTask.partKills=%s[%s%%] killed
+modernhardcorequesting.mobTask.totalKills=Kill a total of %s
+
+# ======================================
+#			REPUTATION REWARD
+# ======================================
+modernhardcorequesting.repReward.value=Reward value
+modernhardcorequesting.repReward.create=Create new
+modernhardcorequesting.repReward.delete=Delete
+modernhardcorequesting.repReward.noValidReps=There are no valid reputations to choose from. Please go to the reputation menu (click on the reputation button on the left hand side of the book when browsing the main menu) and create at least one first.
+
+# ======================================
+#			REPUTATION SETTING
+# ======================================
+modernhardcorequesting.repSetting.invRange=Inverted range?
+modernhardcorequesting.repSetting.lower=Lower bounds
+modernhardcorequesting.repSetting.upper=Upper bounds
+modernhardcorequesting.repSetting.preview=Preview
+modernhardcorequesting.repSetting.invalid=Invalid
+
+# ======================================
+#			  REPUTATION
+# ======================================
+modernhardcorequesting.rep.noValueOf=No value of
+modernhardcorequesting.rep.anyValueOf=Any value of
+modernhardcorequesting.rep.not=Not
+modernhardcorequesting.rep.atLeastTwo=You need at least two tiers
+modernhardcorequesting.rep.notZero=A tier can't have value 0
+modernhardcorequesting.rep.unique=Tiers must have unique values
+modernhardcorequesting.rep.neutral=Neutral: %s
+
+# ======================================
+#			REPUTATION KILL
+# ======================================
+modernhardcorequesting.repKil.kills=Kills: %s/%s
+modernhardcorequesting.repKil.killCount=You've killed %s player(s).
+modernhardcorequesting.repKil.killCountOutOf=You've killed %s of %s player(s).
+
+# ======================================
+#			REPUTATION VALUE
+# ======================================
+modernhardcorequesting.repValue.tierValue=Tier value
+
+# ======================================
+#			    MENU TIER
+# ======================================
+modernhardcorequesting.menuTier.weights=Weights
+
+# ======================================
+#			    MENU TRACKER
+# ======================================
+modernhardcorequesting.menuTracker.radius.title=Player Radius
+modernhardcorequesting.menuTracker.radius.desc=Only includes players within the given distance. Leaving this at zero makes it detect any player, even offline ones.
+modernhardcorequesting.menuTracker.noQuest=No quest selected
+
+# ======================================
+#			    MENU TRIGGER
+# ======================================
+modernhardcorequesting.menuTrigger.taskCount=Trigger tasks count
+modernhardcorequesting.trigger.none.title=Normal Quest
+modernhardcorequesting.trigger.none.desc=Just a normal quest.
+modernhardcorequesting.trigger.quest.title=Trigger Quest
+modernhardcorequesting.trigger.quest.desc=A trigger quest is an invisible quest. The quest can still be completed as usual but you can't claim any rewards for it or see it in any lists. It can be used to trigger other quests, hence its name.
+modernhardcorequesting.trigger.task.title=Trigger Tasks
+modernhardcorequesting.trigger.task.desc=Trigger tasks are the first few tasks of a quest that have to be completed before the quest shows up. The quest will be invisible until the correct amount of tasks have been completed. When the quest becomes visible the player can see the tasks that have already been completed.
+modernhardcorequesting.trigger.anti.title=Reversed Trigger
+modernhardcorequesting.trigger.anti.desc=This quest will be invisible until it is enabled (all its parent quests are completed). This way you can make a secret quest line appear all of a sudden when a known quest is completed.
+
+# ======================================
+#			    QUEST BOOK
+# ======================================
+modernhardcorequesting.questBook.saveAll=Save all
+modernhardcorequesting.questBook.open=Open
+modernhardcorequesting.questBook.createSet=Create Set
+modernhardcorequesting.questBook.createGroup=Create Group
+modernhardcorequesting.questBook.createTier=Create Tier
+modernhardcorequesting.questBook.reset=Reset
+modernhardcorequesting.questBook.create=Create New
+modernhardcorequesting.questBook.start=Click here to start
+modernhardcorequesting.questBook.playAgain=Click to play again
+modernhardcorequesting.questBook.lives=Lives
+modernhardcorequesting.questBook.party=Party
+modernhardcorequesting.questBook.quests=Quests
+modernhardcorequesting.questBook.reputation=Reputation
+modernhardcorequesting.questBook.showQuests=Click here to show quests
+modernhardcorequesting.questBook.deadOut=If you die, you're out.
+modernhardcorequesting.questBook.infiniteLives=Hardcore mode is not active, you have an infinite amount of lives.
+modernhardcorequesting.questBook.deaths=You've currently died %s time(s)
+modernhardcorequesting.questBook.invites=You have %s party invite(s)
+modernhardcorequesting.questBook.notInParty=You're currently not in a party.
+modernhardcorequesting.questBook.inParty=You're in a party with %s player(s)
+modernhardcorequesting.questBook.openParty=Click here to open party window
+modernhardcorequesting.questBook.resetParty=Reset the quest progress for the entire party.
+modernhardcorequesting.questBook.shiftCtrlConfirm=Hold shift+ctrl while clicking to confirm.
+modernhardcorequesting.questBook.maxRetrieval=Maximum retrieval count
+modernhardcorequesting.questBook.noRestriction=Leave at 0 for no restriction
+modernhardcorequesting.questBook.items=%s items
+modernhardcorequesting.questBook.allQuests=All Quests Completed
+modernhardcorequesting.questBook.percentageQuests=%s%% Completed
+modernhardcorequesting.questBook.locked=Locked
+modernhardcorequesting.questBook.lockedQuest=Locked Quest
+modernhardcorequesting.questBook.unclaimedRewards=%s quest(s) with unclaimed rewards
+modernhardcorequesting.questBook.createNewSet=Click the button below to create a new empty quest set.
+modernhardcorequesting.questBook.shiftSetReset=Hold shift and click on quests to automatically complete them or reset their progress.
+modernhardcorequesting.questBook.parentCount=Requires %s/%s quest(s) to be completed.
+modernhardcorequesting.questBook.parentCountElsewhere=Requires %s/%s quest(s) to be completed elsewhere.
+modernhardcorequesting.questBook.and=and
+modernhardcorequesting.questBook.hold=Hold %s
+modernhardcorequesting.questBook.holding=Holding %s
+modernhardcorequesting.questBook.completed=Completed
+modernhardcorequesting.questBook.unclaimedReward=Unclaimed reward
+modernhardcorequesting.questBook.reqOnly=Only requires %s quest(s) to be completed.
+modernhardcorequesting.questBook.reqMore=Requires %s quest(s) to be completed. This is more than there are, weird.
+modernhardcorequesting.questBook.reqAll=Requires all %s quest(s) to be completed.
+modernhardcorequesting.questBook.noTasks=This quest has no tasks!
+modernhardcorequesting.questBook.completedTasks=%s/%s completed tasks.
+modernhardcorequesting.questBook.invisLocked=Invisible while locked
+modernhardcorequesting.questBook.invisPerm=Permanently invisible
+modernhardcorequesting.questBook.invisCount=Invisible until %s task(s) have been completed.
+modernhardcorequesting.questBook.invisInherit=Inherited invisibility
+modernhardcorequesting.questBook.invisOption=Invisible through quest option.
+modernhardcorequesting.questBook.optionLinks=Connected to %s quest(s) through option links.
+modernhardcorequesting.questBook.childUnlocks=Unlocks %s quest(s) elsewhere.
+modernhardcorequesting.questBook.ctrlNonEditor=Hold Ctrl to see this as a non-editor.
+modernhardcorequesting.questBook.resetQuest=Click to reset quest
+modernhardcorequesting.questBook.completeQuest=Click to complete quest
+modernhardcorequesting.questBook.warning=WARNING!
+modernhardcorequesting.questBook.deleteOnClick=You're now deleting everything you click on!
+modernhardcorequesting.questBook.goBack=Go back
+modernhardcorequesting.questBook.rightClick=You can also right click anywhere
+modernhardcorequesting.questBook.totalQuests=%s quest(s) in total
+modernhardcorequesting.questBook.unlockedQuests=%s unlocked quests(s)
+modernhardcorequesting.questBook.completedQuests=%s completed quests(s)
+modernhardcorequesting.questBook.availableQuests=%s quests(s) available for completion
+modernhardcorequesting.questBook.unclaimedQuests=%s quests(s) with unclaimed rewards
+modernhardcorequesting.questBook.inclInvisiQuests=%s quests(s) including invisible ones
+
+# ======================================
+#			    TEAM LIST
+# ======================================
+modernhardcorequesting.teamList.done=%s%% done
+modernhardcorequesting.teamList.players=Players: %s
+modernhardcorequesting.teamList.lives=Lives: %s
+modernhardcorequesting.teamList.page=Page %s
+
+# ======================================
+#			LOCATION MENU
+# ======================================
+modernhardcorequesting.locationMenu.xTarget=X ciblé
+modernhardcorequesting.locationMenu.yTarget=Y ciblé
+modernhardcorequesting.locationMenu.zTarget=Z ciblé
+modernhardcorequesting.locationMenu.dim=Dimension
+modernhardcorequesting.locationMenu.radius=Rayon
+modernhardcorequesting.locationMenu.negRadius=Un rayon négatif ignores la position du joueur
+modernhardcorequesting.locationMenu.location=Votre position
+modernhardcorequesting.locationMenu.visFull.title=Tout montrer
+modernhardcorequesting.locationMenu.visFull.desc=Will display the location of the target to the player and therefore the distance to it as well. The maximum distance the player can be from the target (the radius) is also displayed.
+modernhardcorequesting.locationMenu.visLocation.title=Montrer la position
+modernhardcorequesting.locationMenu.visLocation.desc=The radius required to trigger the location is hidden from the user. The location is however still visible, and therefore even the distance to it.
+modernhardcorequesting.locationMenu.visNone.title=Cacher l'info
+modernhardcorequesting.locationMenu.visNone.desc=The location, distance and radius will be hidden from the user. It's up to you to guide them through the map or through text.
+modernhardcorequesting.locationMenu.visited=Visité
+modernhardcorequesting.locationMenu.mAway=%sm de distance
+modernhardcorequesting.locationMenu.mRadius=%sm de rayon
+modernhardcorequesting.locationMenu.wrongDim=Mauvaise dimension
+
+# ======================================
+#		    REPEAT MENU
+# ======================================
+modernhardcorequesting.repeatMenu.days=Jours
+modernhardcorequesting.repeatMenu.hours=Heures
+modernhardcorequesting.repeatMenu.mcDaysHours=Ce sont les jours et les heures de minecraft.
+
+# ======================================
+#		    PORTAL MENU
+# ======================================
+modernhardcorequesting.portalMenu.edit=Editer un élément
+modernhardcorequesting.portalMenu.collisionOnComplete=Use collision when completed
+modernhardcorequesting.portalMenu.texOnComplete=Use textures when completed
+modernhardcorequesting.portalMenu.collisionNonComplete=Use collision when not completed
+modernhardcorequesting.portalMenu.texNonComplete=Use textures when not completed
+modernhardcorequesting.portalMenu.noQuest=Pas de quête sélectionnée
+
+# ======================================
+#		PARENT COUNT MENU
+# ======================================
+modernhardcorequesting.parentCount.count=Parent count
+modernhardcorequesting.parentCount.reqAll.title=Requires all
+modernhardcorequesting.parentCount.reqCount.title=Requires specified amount
+modernhardcorequesting.parentCount.reqAll.desc=All parent quests have to be completed before this quest unlocks.
+modernhardcorequesting.parentCount.reqCount.desc=For this quest to unlock the player will have to complete a certain amount of parent quests. The required amount can be specified below.
+
+# ======================================
+#			TEXT EDITOR
+# ======================================
+modernhardcorequesting.textEditor.copyAll=Tout copier
+modernhardcorequesting.textEditor.paste=Coller
+modernhardcorequesting.textEditor.clear=Effacer
+modernhardcorequesting.textEditor.clearPaste=Effacer et coller
+modernhardcorequesting.textEditor.unnamed=Sans-nom
+
+# ======================================
+#			PARTY MENU
+# ======================================
+modernhardcorequesting.party.create=Créer une aventure
+modernhardcorequesting.party.invitePlayer=Inviter un joueur
+modernhardcorequesting.party.accept=Acceptez
+modernhardcorequesting.party.decline=Déclinez
+modernhardcorequesting.party.decideLater=Décidez plus tard
+modernhardcorequesting.party.kickPlayer=Sortir un joueur
+modernhardcorequesting.party.removeInvite=Retirer l'invitation
+modernhardcorequesting.party.leave=Quitter l'aventure
+modernhardcorequesting.party.disband=Disband Party
+modernhardcorequesting.party.list=Liste d'aventure
+modernhardcorequesting.party.invites=Vos invitations
+modernhardcorequesting.party.noInvites=Pas d'invitations d'aventure
+modernhardcorequesting.party.name=Nom de l'aventure
+modernhardcorequesting.party.owner=Propriétaire
+modernhardcorequesting.party.invite=Invité
+modernhardcorequesting.party.playerName=Nom du joueur
+modernhardcorequesting.party.shiftConfirm=Hold shift while clicking to confirm.
+modernhardcorequesting.party.shiftCtrlConfirm=Hold shift+ctrl while clicking to confirm.
+modernhardcorequesting.party.currentSelection=You have currently selected: %s
+modernhardcorequesting.party.stats=Stats à propos de toutes les aventures existantes.
+modernhardcorequesting.party.lifeSetting=Option vie : %s
+modernhardcorequesting.party.rewardSetting=Option récompenses: %s
+modernhardcorequesting.party.change=Cliquez ici pour changer

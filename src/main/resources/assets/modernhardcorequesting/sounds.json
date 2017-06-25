@@ -1,0 +1,47 @@
+{
+  "complete": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "modernhardcorequesting:complete",
+        "stream": false
+      }
+    ]
+  },
+  "heart": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "modernhardcorequesting:addlife",
+        "stream": false
+      }
+    ]
+  },
+  "rotten": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "modernhardcorequesting:addlife",
+        "stream": false
+      }
+    ]
+  },
+  "reward": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "modernhardcorequesting:reward",
+        "stream": false
+      }
+    ]
+  },
+  "ban": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "modernhardcorequesting:boom",
+        "stream": false
+      }
+    ]
+  }
+}

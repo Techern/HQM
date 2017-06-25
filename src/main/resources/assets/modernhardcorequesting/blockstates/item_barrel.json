@@ -1,0 +1,18 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures" : { "all" : "modernhardcorequesting:blocks/hqm_item_barrel_empty"},
+    "model": "minecraft:cube_all",
+    "transform": "forge:default-block"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}],
+    "bound": {
+      "true" : {
+        "textures": {"all": "modernhardcorequesting:blocks/hqm_item_barrel"}
+      },
+      "false":{}
+    }
+  }
+}

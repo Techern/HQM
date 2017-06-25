@@ -1,0 +1,6 @@
+{
+  "parent":"modernhardcorequesting:item/base_item",
+  "textures": {
+    "layer0":"modernhardcorequesting:items/halfheart"
+  }
+}

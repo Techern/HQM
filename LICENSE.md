@@ -1,3 +1,5 @@
+Original mod is Copyright (c) LordDusk and all contributors found in the LordDusk HQM GitHub member list.
+
                    GNU LESSER GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
