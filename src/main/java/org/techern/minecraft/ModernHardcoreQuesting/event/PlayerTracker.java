@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 @Mod.EventBusSubscriber
 public class PlayerTracker {
 
-    public static final String HQ_TAG = "HardcoreQuesting";
+    public static final String MHQ_TAG = "ModernHardcoreQuesting";
     public static final String RECEIVED_BOOK = "questBook";
 
     public PlayerTracker() {
@@ -44,12 +44,12 @@ public class PlayerTracker {
             player.sendMessage(new TextComponentTranslation("modernhardcorequesting.message.noHardcore"));
 
         NBTTagCompound tags = player.getEntityData();
-        if (tags.hasKey(HQ_TAG)) {
-            if (tags.getCompoundTag(HQ_TAG).getBoolean(RECEIVED_BOOK)) {
+        if (tags.hasKey(MHQ_TAG)) {
+            if (tags.getCompoundTag(MHQ_TAG).getBoolean(RECEIVED_BOOK)) {
                 QuestingData.getQuestingData(player).receivedBook = true;
             }
             if (!QuestingData.isQuestActive()) {
-                tags.removeTag(HQ_TAG);
+                tags.removeTag(MHQ_TAG);
             }
         }
         QuestingData.spawnBook(player);

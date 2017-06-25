@@ -234,10 +234,10 @@ public class QuestingData {
         if (!Quest.isEditing && !player.world.isRemote && ModConfig.spawnBook && !QuestingData.getQuestingData(player).receivedBook && QuestingData.isQuestActive()) {
             QuestingData.getQuestingData(player).receivedBook = true;
             NBTTagCompound hqmTag = new NBTTagCompound();
-            if (player.getEntityData().hasKey(PlayerTracker.HQ_TAG))
-                hqmTag = player.getEntityData().getCompoundTag(PlayerTracker.HQ_TAG);
+            if (player.getEntityData().hasKey(PlayerTracker.MHQ_TAG))
+                hqmTag = player.getEntityData().getCompoundTag(PlayerTracker.MHQ_TAG);
             hqmTag.setBoolean(PlayerTracker.RECEIVED_BOOK, true);
-            player.getEntityData().setTag(PlayerTracker.HQ_TAG, hqmTag);
+            player.getEntityData().setTag(PlayerTracker.MHQ_TAG, hqmTag);
             ItemStack stack = new ItemStack(ModItems.book);
 
             //Actually, as a last resort, check to see if a player already has a book
