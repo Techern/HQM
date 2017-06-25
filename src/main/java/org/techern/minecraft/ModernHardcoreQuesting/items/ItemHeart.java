@@ -77,7 +77,7 @@ public class ItemHeart extends Item {
                     SoundHandler.play(Sounds.ROTTEN, player);
                     player.sendMessage(new TextComponentTranslation("modernhardcorequesting.message.eatRottenHearth"));
                     QuestingData.getQuestingData(player).removeLifeAndSendMessage(player);
-                    DeathType.HQM.onDeath(player);
+                    DeathType.ROTTEN_HEART.onDeath(player);
 
                     if (!player.capabilities.isCreativeMode)
                         stack.shrink(1);

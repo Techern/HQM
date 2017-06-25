@@ -86,7 +86,7 @@ public enum DeathType {
             return source.isMagicDamage();
         }
     },
-    HQM("rottenHearts") {
+    ROTTEN_HEART("rottenHearts") {
         @Override
         boolean isSourceValid(DamageSource source) {
             return false; //handled elsewhere
